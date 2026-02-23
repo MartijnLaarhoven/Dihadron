@@ -812,6 +812,37 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
         // Generate the 1D projections BEFORE setting axis ranges (so they include all dEta data)
         TH1D* hPhiSameOverMixed_temp = (TH1D*)hPhiEtaSMsum->ProjectionX(Form("hPhiSameOverMixed_%d_%d%s_temp", minRange, maxRange, suffix.Data()));
         
+        // Find the actual data range in dEta (Y-axis) - only show bins with actual data
+        Int_t firstBinWithData = -1;
+        Int_t lastBinWithData = -1;
+        Int_t nYbins = hPhiEtaSMsum->GetYaxis()->GetNbins();
+        
+        // Scan Y-axis (dEta) to find first and last bins with non-zero content
+        for (Int_t iy = 1; iy <= nYbins; ++iy) {
+            // Sum all X bins (dPhi) for this Y bin
+            Double_t sumContent = 0;
+            for (Int_t ix = 1; ix <= hPhiEtaSMsum->GetXaxis()->GetNbins(); ++ix) {
+                sumContent += hPhiEtaSMsum->GetBinContent(ix, iy);
+            }
+            if (sumContent > 0) {
+                if (firstBinWithData == -1) firstBinWithData = iy;
+                lastBinWithData = iy;
+            }
+        }
+        
+        // Calculate the actual dEta range from the bin edges
+        Double_t actualDEtaMin, actualDEtaMax;
+        if (firstBinWithData > 0 && lastBinWithData > 0) {
+            actualDEtaMin = hPhiEtaSMsum->GetYaxis()->GetBinLowEdge(firstBinWithData);
+            actualDEtaMax = hPhiEtaSMsum->GetYaxis()->GetBinUpEdge(lastBinWithData);
+            std::cout << "Actual dEta range found: [" << actualDEtaMin << ", " << actualDEtaMax << "]" << std::endl;
+        } else {
+            // Fallback to calculated range if no data found
+            actualDEtaMin = expectedDEtaMin;
+            actualDEtaMax = expectedDEtaMax;
+            std::cout << "No data found in Y-axis, using calculated range: [" << actualDEtaMin << ", " << actualDEtaMax << "]" << std::endl;
+        }
+        
         // DO NOT set Y-axis range on original histograms - keep them with full data for file writing
         // We'll only restrict the display range on the clones used for drawing
 
@@ -831,7 +862,7 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
 
         c1->cd(1);
         TH2D* hPhiEtaSMsum_draw = (TH2D*)hPhiEtaSMsum->Clone("hPhiEtaSMsum_draw");
-        hPhiEtaSMsum_draw->GetYaxis()->SetRangeUser(expectedDEtaMin - 0.05, expectedDEtaMax + 0.05);
+        hPhiEtaSMsum_draw->GetYaxis()->SetRangeUser(actualDEtaMin, actualDEtaMax);
         hPhiEtaSMsum_draw->Draw("surf1");
         TLatex latex;
         latex.SetNDC();
@@ -842,7 +873,7 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
 
         c1->cd(3);
         TH2D* hPhiEtaSsum_draw = (TH2D*)hPhiEtaSsum->Clone("hPhiEtaSsum_draw");
-        hPhiEtaSsum_draw->GetYaxis()->SetRangeUser(expectedDEtaMin - 0.05, expectedDEtaMax + 0.05);
+        hPhiEtaSsum_draw->GetYaxis()->SetRangeUser(actualDEtaMin, actualDEtaMax);
         hPhiEtaSsum_draw->Draw("surf1");
         latex.SetNDC();
         latex.SetTextSize(0.04);
@@ -852,7 +883,7 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
 
         c1->cd(4);
         TH2D* hPhiEtaMsum_draw = (TH2D*)hPhiEtaMsum->Clone("hPhiEtaMsum_draw");
-        hPhiEtaMsum_draw->GetYaxis()->SetRangeUser(expectedDEtaMin - 0.05, expectedDEtaMax + 0.05);
+        hPhiEtaMsum_draw->GetYaxis()->SetRangeUser(actualDEtaMin, actualDEtaMax);
         hPhiEtaMsum_draw->Draw("surf1");
         latex.SetNDC();
         latex.SetTextSize(0.04);
