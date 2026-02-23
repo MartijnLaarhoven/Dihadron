@@ -1,0 +1,2012 @@
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.8, -0.7]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.7, -0.6]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.6, -0.5]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.5, -0.4]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.4, -0.3]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.3, -0.2]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.2, -0.1]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.1, 0]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 6.73973e+10
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.39421e+08, hPhiEtaM integral: 1.80714e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.326
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.5029e+08, hPhiEtaM integral: 1.83014e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.323
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.50081e+08, hPhiEtaM integral: 1.82518e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.328
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.52716e+08, hPhiEtaM integral: 1.83805e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.321
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53851e+08, hPhiEtaM integral: 1.83608e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53877e+08, hPhiEtaM integral: 1.83918e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.46437e+08, hPhiEtaM integral: 1.82693e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.324
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.44683e+08, hPhiEtaM integral: 1.81304e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.314
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.53992e+08, hPhiEtaM integral: 1.83431e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.313
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.41075e+08, hPhiEtaM integral: 1.80127e+08
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.322
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 7.48642e+09, hPhiEtaM integral: 1.82513e+09
+DEBUG: Before projection - hPhiEtaSMsum integral = 100.32
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.8, -0.7]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.7, -0.6]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.6, -0.5]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.5, -0.4]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.4, -0.3]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.3, -0.2]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.2, -0.1]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: Trying CF step 6
+DEBUG: Step 6 - Same non-zero bins: 1, Mixed non-zero bins: 1
+DEBUG: Processing eta bin [-0.1, 0]
+DEBUG: Same entries: 0, Mixed entries: 0, Trig entries: 4.78904e+09
+DEBUG: After reading - Non-zero bins - Same: 230400, Mixed: 230400
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.70904e+06, hPhiEtaM integral: 1.22848e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18227
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.82296e+06, hPhiEtaM integral: 1.24365e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18113
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.77766e+06, hPhiEtaM integral: 1.24634e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17693
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76654e+06, hPhiEtaM integral: 1.24731e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18032
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81674e+06, hPhiEtaM integral: 1.25262e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17778
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.78132e+06, hPhiEtaM integral: 1.24927e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17827
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.75548e+06, hPhiEtaM integral: 1.24138e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17775
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.7418e+06, hPhiEtaM integral: 1.23681e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18065
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.81667e+06, hPhiEtaM integral: 1.24771e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17729
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.69994e+06, hPhiEtaM integral: 1.23488e+06
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.18168
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 0, hPhiEtaM integral: 0
+DEBUG: Before projection - hPhiEtaSMsum integral = -nan
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17849
+DEBUG: nz (vertex bins) = 20
+DEBUG: Vertex bin 1 - hPhiEtaS null: 0, hPhiEtaM null: 0
+DEBUG: Vertex bin 1 - hPhiEtaS integral: 5.76882e+07, hPhiEtaM integral: 1.24284e+07
+DEBUG: Before projection - hPhiEtaSMsum integral = 9.17

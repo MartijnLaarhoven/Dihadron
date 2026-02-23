@@ -1,0 +1,10 @@
+#0  0x00007bd250f107d7 in wait4 () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007bd250e585bb in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007bd2519655fa in TUnixSystem::Exec (this=0x26eba400, shellcmd=<optimized out>) at /local/workspace/DailyBuilds/DailyO2-ubuntu2404/daily-tags.onuiTBKb8d/SOURCES/ROOT/v6-36-04-alice9/v6-36-04-alice9/core/unix/src/TUnixSystem.cxx:2157
+#3  TUnixSystem::StackTrace (this=0x26eba400) at /local/workspace/DailyBuilds/DailyO2-ubuntu2404/daily-tags.onuiTBKb8d/SOURCES/ROOT/v6-36-04-alice9/v6-36-04-alice9/core/unix/src/TUnixSystem.cxx:2448
+#4  0x00007bd24331418a in FairLogger::LogFatalMessage () at /local/workspace/DailyBuilds/DailyO2-ubuntu2404/daily-tags.onuiTBKb8d/SOURCES/FairRoot/v18.4.9-alice3/v18.4.9-alice3/fairtools/FairLogger.cxx:195
+#5  0x00007bd237b44a88 in std::function<void()>::operator() (this=0x7bd237b565e0 <fair::Logger::fFatalCallback>) at /local/workspace/DailyBuilds/DailyO2-ubuntu2404/daily-tags.cIj4HUXwA9/ubuntu2404_x86-64/GCC-Toolchain/v14.2.0-alice2-1/include/c++/14.2.0/bits/std_function.h:587
+#6  fair::Logger::~Logger (this=0x7fff268c35b0, __in_chrg=<optimized out>) at /local/workspace/DailyBuilds/DailyO2-ubuntu2404/daily-tags.cIj4HUXwA9/SOURCES/FairLogger/v2.3.1/v2.3.1/logger/Logger.cxx:279
+#7  0x00007bd232927f66 in StepTHn::createTarget (this=<optimized out>, step=0, sparse=<optimized out>) at /home/martijn-laarhoven/alice/sw/ubuntu2404_x86-64/GCC-Toolchain/v14.2.0-alice2-1/include/c++/14.2.0/bits/allocator.h:182
+#8  0x00007bd24986d41e in ?? ()
+#9  0x0000000000000000 in ?? ()
