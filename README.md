@@ -1,4 +1,4 @@
-# DihadronAnalysis
+# Dihadron
 
 ## Description
 The basic post-processing framework for TPC-TPC di-hadron correlations, written by Zhiyong (zhiyong.lu@cern.ch).
@@ -11,4 +11,5 @@ The sequence is:
 - root -l Process_dPhidEta.cxx
 - root -l Process_CreateBootstrapSample.cxx
 - root -l Process_TemplateFit.cxx
-I have left an example in the main function, where you can easily get start with.
+
+Note: This repo focuses on eta-dependent dihadron analysis.
