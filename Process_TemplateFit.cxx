@@ -61,8 +61,10 @@ struct VnUnit {
     Double_t v3_err;
     Double_t v4;
     Double_t v4_err;
-    VnUnit(Double_t _v1, Double_t _v1_err, Double_t _v2, Double_t _v2_err, Double_t _v3, Double_t _v3_err, Double_t _v4, Double_t _v4_err) :
-        v1(_v1), v1_err(_v1_err), v2(_v2), v2_err(_v2_err), v3(_v3), v3_err(_v3_err), v4(_v4), v4_err(_v4_err) {}
+    Double_t F;
+    Double_t F_err;
+    VnUnit(Double_t _v1, Double_t _v1_err, Double_t _v2, Double_t _v2_err, Double_t _v3, Double_t _v3_err, Double_t _v4, Double_t _v4_err, Double_t _F=0.0, Double_t _F_err=0.0) :
+        v1(_v1), v1_err(_v1_err), v2(_v2), v2_err(_v2_err), v3(_v3), v3_err(_v3_err), v4(_v4), v4_err(_v4_err), F(_F), F_err(_F_err) {}
 };
 
 // declare functions
@@ -964,6 +966,7 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
         std::cout << "v2: " << vnResult_PtDiff->v2 << " +/- " << vnResult_PtDiff->v2_err << std::endl;
         std::cout << "v3: " << vnResult_PtDiff->v3 << " +/- " << vnResult_PtDiff->v3_err << std::endl;
         std::cout << "v4: " << vnResult_PtDiff->v4 << " +/- " << vnResult_PtDiff->v4_err << std::endl;
+        std::cout << "F:  " << vnResult_PtDiff->F << " +/- " << vnResult_PtDiff->F_err << std::endl;
         return vnResult_PtDiff;
     }
     std::cout << "print result: " << data.fileNameSuffix << std::endl;
@@ -971,6 +974,7 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
     std::cout << "v2: " << vnResult->v2 << " +/- " << vnResult->v2_err << std::endl;
     std::cout << "v3: " << vnResult->v3 << " +/- " << vnResult->v3_err << std::endl;
     std::cout << "v4: " << vnResult->v4 << " +/- " << vnResult->v4_err << std::endl;
+    std::cout << "F:  " << vnResult->F << " +/- " << vnResult->F_err << std::endl;
 
     return vnResult;
 }
@@ -1095,7 +1099,7 @@ VnUnit* fitSample(Bool_t isNch, TFile* templatefile, InputUnit templ, TFile* dat
     if (sample == -1) {
         PlotFitting(lm, hm, isNch, data.fileNameSuffix, data.minRange, data.maxRange, fParamVal, fParamErr, pTMin, pTMax, systemName);
     }
-    VnUnit* vnResult = new VnUnit(fParamVal[5], fParamErr[5], fParamVal[0], fParamErr[0], fParamVal[1], fParamErr[1], fParamVal[2], fParamErr[2]);
+    VnUnit* vnResult = new VnUnit(fParamVal[5], fParamErr[5], fParamVal[0], fParamErr[0], fParamVal[1], fParamErr[1], fParamVal[2], fParamErr[2], fParamVal[3], fParamErr[3]);
     return vnResult;
 }
 
