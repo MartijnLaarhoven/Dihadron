@@ -320,6 +320,10 @@ void Read_dPhidEta_givenRange(std::string fileNameSuffix, Bool_t isNch, Int_t mi
     // sparMix->GetAxis(corrAxis_kPt_TPC_asso)->SetRangeUser(minPt+0.001, maxPt-0.001);
     // trig->GetAxis(trigAxis_pT)->SetRangeUser(minPt+0.001, maxPt-0.001);
     
+    // Debug: print dEta axis binning information
+    TAxis* detaAxis = sparSig->GetAxis(corrAxis_kdEtaTPCTPC);
+    std::cout << "dEta axis info - Nbins: " << detaAxis->GetNbins() << ", Xmin: " << detaAxis->GetXmin() << ", Xmax: " << detaAxis->GetXmax() << ", BinWidth: " << detaAxis->GetBinWidth(1) << std::endl;
+    
     std::cout << "After range setting - Same entries: " << sparSig->GetEntries() 
               << ", Mixed entries: " << sparMix->GetEntries() << std::endl;
 
@@ -432,15 +436,16 @@ void Read_dPhidEta_givenRange(std::string fileNameSuffix, Bool_t isNch, Int_t mi
         hPhiEtaSMsum->Scale(1.0 / hPhiEtaSMsum->GetYaxis()->GetBinWidth(1));
         TH1D* hEta = hPhiEtaSMsum->ProjectionY(Form("hEta_%d_%d%s", minRange, maxRange, suffix.Data()));
         hEta->SetTitle("#Delta#eta");
-        hPhiEtaSMsum->Rebin2D(2, 1);
+        // No rebinning - keep original fine binning from sparse histogram
+        // hPhiEtaSMsum->Rebin2D(1, 1);
 
         hPhiEtaMsum->Scale(1.0 / hPhiEtaMsum->GetXaxis()->GetBinWidth(1));
         hPhiEtaMsum->Scale(1.0 / hPhiEtaMsum->GetYaxis()->GetBinWidth(1));
-        hPhiEtaMsum->Rebin2D(1, 1);
+        // hPhiEtaMsum->Rebin2D(1, 1);
 
         hPhiEtaSsum->Scale(1.0 / hPhiEtaSsum->GetXaxis()->GetBinWidth(1));
         hPhiEtaSsum->Scale(1.0 / hPhiEtaSsum->GetYaxis()->GetBinWidth(1));
-        hPhiEtaSsum->Rebin2D(1, 1);
+        // hPhiEtaSsum->Rebin2D(1, 1);
 
         
         hPhiEtaSMsum->SetName(Form("dphideta_SM_%d_%d%s", minRange, maxRange, suffix.Data()));
@@ -812,8 +817,11 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
         // Generate the 1D projections BEFORE setting axis ranges (so they include all dEta data)
         TH1D* hPhiSameOverMixed_temp = (TH1D*)hPhiEtaSMsum->ProjectionX(Form("hPhiSameOverMixed_%d_%d%s_temp", minRange, maxRange, suffix.Data()));
         
-        // Rebin to get finer dEta binning (only rebin phi direction)
+        // Rebin: 2 in phi direction, 1 in dEta direction (keeps original dEta binning)
         hPhiEtaSMsum->Rebin2D(2, 1);
+        // Don't rebin mixed and single - keep them as is
+        // hPhiEtaMsum->Rebin2D(1, 1);
+        // hPhiEtaSsum->Rebin2D(1, 1);
         Int_t firstBinWithData = -1;
         Int_t lastBinWithData = -1;
         Int_t nYbins = hPhiEtaSMsum->GetYaxis()->GetNbins();
