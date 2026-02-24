@@ -79,8 +79,12 @@ void Process_dPhidEta() {
             for (int iEta = 0; iEta < etaBins.size() - 1; iEta++) {
                 double etaMin = etaBins[iEta];
                 double etaMax = etaBins[iEta + 1];
-                // Negative trigger eta correlated with positive associated eta [0.7, 0.8]
-                Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, 0.7, 0.8, input.isMc);
+                // Negative trigger eta correlated with positive associated eta
+                // Split [0.7, 0.8] into two 0.05-width bins for finer dEta resolution
+                std::vector<std::pair<double,double>> assoEtaBins = {{0.7, 0.75}, {0.75, 0.8}};
+                for (auto& assoEta : assoEtaBins) {
+                    Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, assoEta.first, assoEta.second, input.isMc);
+                }
             }
         }
         else {
@@ -108,8 +112,12 @@ void Process_dPhidEta() {
             for (int iEta = 0; iEta < reversedEtaBins.size() - 1; iEta++) {
                 double etaMin = reversedEtaBins[iEta];
                 double etaMax = reversedEtaBins[iEta + 1];
-                // Positive trigger eta correlated with negative associated eta [-0.8, -0.7]
-                Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, -0.8, -0.7, input.isMc);
+                // Positive trigger eta correlated with negative associated eta
+                // Split [-0.8, -0.7] into two 0.05-width bins for finer dEta resolution
+                std::vector<std::pair<double,double>> assoEtaBins = {{-0.8, -0.75}, {-0.75, -0.7}};
+                for (auto& assoEta : assoEtaBins) {
+                    Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, assoEta.first, assoEta.second, input.isMc);
+                }
             }
         } else {
             Read_dPhidEta_givenRange(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, input.isMc);
@@ -133,8 +141,12 @@ void Process_dPhidEta() {
             for (int iEta = 0; iEta < etaBins.size() - 1; iEta++) {
                 double etaMin = etaBins[iEta];
                 double etaMax = etaBins[iEta + 1];
-                // Negative trigger eta correlated with positive associated eta [0.7, 0.8]
-                Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, 0.7, 0.8, input.isMc);
+                // Negative trigger eta correlated with positive associated eta
+                // Split [0.7, 0.8] into two 0.05-width bins for finer dEta resolution
+                std::vector<std::pair<double,double>> assoEtaBins = {{0.7, 0.75}, {0.75, 0.8}};
+                for (auto& assoEta : assoEtaBins) {
+                    Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, assoEta.first, assoEta.second, input.isMc);
+                }
             }
         }
         else {
@@ -159,8 +171,12 @@ void Process_dPhidEta() {
             for (int iEta = 0; iEta < reversedEtaBins.size() - 1; iEta++) {
                 double etaMin = reversedEtaBins[iEta];
                 double etaMax = reversedEtaBins[iEta + 1];
-                // Positive trigger eta correlated with negative associated eta [-0.8, -0.7]
-                Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, -0.8, -0.7, input.isMc);
+                // Positive trigger eta correlated with negative associated eta
+                // Split [-0.8, -0.7] into two 0.05-width bins for finer dEta resolution
+                std::vector<std::pair<double,double>> assoEtaBins = {{-0.8, -0.75}, {-0.75, -0.7}};
+                for (auto& assoEta : assoEtaBins) {
+                    Read_dPhidEta_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, assoEta.first, assoEta.second, input.isMc);
+                }
             }
         } else {
             Read_dPhidEta_givenRange(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, input.isMc);
