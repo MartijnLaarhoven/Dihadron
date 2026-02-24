@@ -432,7 +432,7 @@ void Read_dPhidEta_givenRange(std::string fileNameSuffix, Bool_t isNch, Int_t mi
         hPhiEtaSMsum->Scale(1.0 / hPhiEtaSMsum->GetYaxis()->GetBinWidth(1));
         TH1D* hEta = hPhiEtaSMsum->ProjectionY(Form("hEta_%d_%d%s", minRange, maxRange, suffix.Data()));
         hEta->SetTitle("#Delta#eta");
-        hPhiEtaSMsum->Rebin2D(2, 2);
+        hPhiEtaSMsum->Rebin2D(2, 1);
 
         hPhiEtaMsum->Scale(1.0 / hPhiEtaMsum->GetXaxis()->GetBinWidth(1));
         hPhiEtaMsum->Scale(1.0 / hPhiEtaMsum->GetYaxis()->GetBinWidth(1));
@@ -812,7 +812,8 @@ void Read_dPhidEta_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, 
         // Generate the 1D projections BEFORE setting axis ranges (so they include all dEta data)
         TH1D* hPhiSameOverMixed_temp = (TH1D*)hPhiEtaSMsum->ProjectionX(Form("hPhiSameOverMixed_%d_%d%s_temp", minRange, maxRange, suffix.Data()));
         
-        // Find the actual data range in dEta (Y-axis) - only show bins with actual data
+        // Rebin to get finer dEta binning (only rebin phi direction)
+        hPhiEtaSMsum->Rebin2D(2, 1);
         Int_t firstBinWithData = -1;
         Int_t lastBinWithData = -1;
         Int_t nYbins = hPhiEtaSMsum->GetYaxis()->GetNbins();
