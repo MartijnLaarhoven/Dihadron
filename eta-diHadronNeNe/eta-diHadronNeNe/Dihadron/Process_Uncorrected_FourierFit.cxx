@@ -182,7 +182,12 @@ void PlotFourierFitStyle(TH1D* hInput,
     legend->AddEntry(fV2, Form("V_{2#Delta}=%.5f #pm %.2e", fitResult.v2, fitResult.v2_err), "l");
     legend->AddEntry(fV3, Form("V_{3#Delta}=%.5f #pm %.2e", fitResult.v3, fitResult.v3_err), "l");
     legend->AddEntry(fV4, Form("V_{4#Delta}=%.5f #pm %.2e", fitResult.v4, fitResult.v4_err), "l");
-    legend->AddEntry((TObject*)0, Form("#chi^{2}/ndf = %.2e", fitResult.chi2ndf), "");
+    // Show chi2/ndf in appropriate format
+    if (fitResult.chi2ndf < 0.01) {
+        legend->AddEntry((TObject*)0, Form("#chi^{2}/ndf = %.2e", fitResult.chi2ndf), "");
+    } else {
+        legend->AddEntry((TObject*)0, Form("#chi^{2}/ndf = %.2f", fitResult.chi2ndf), "");
+    }
     legend->Draw();
 
     padBottom->cd();
@@ -209,13 +214,17 @@ void PlotFourierFitStyle(TH1D* hInput,
         }
     }
     
-    // Auto-scale ratio plot with margins
+    // Auto-scale ratio plot - always zoom to show variation
     Double_t ratioRange = ratioMax - ratioMin;
-    Double_t ratioYmin = ratioMin - 0.3 * ratioRange;
-    Double_t ratioYmax = ratioMax + 0.3 * ratioRange;
-    // Ensure reasonable range around 1.0
-    if (ratioYmin > 0.95) ratioYmin = TMath::Max(0.90, ratioMin - 0.05);
-    if (ratioYmax < 1.05) ratioYmax = TMath::Min(1.10, ratioMax + 0.05);
+    if (ratioRange < 0.02) {
+        // Very tight fit - zoom in to show structure
+        Double_t ratioMid = (ratioMin + ratioMax) / 2.0;
+        ratioRange = 0.02;  // Force minimum visible range of 2%
+        ratioMin = ratioMid - ratioRange / 2.0;
+        ratioMax = ratioMid + ratioRange / 2.0;
+    }
+    Double_t ratioYmin = ratioMin - 0.4 * ratioRange;
+    Double_t ratioYmax = ratioMax + 0.4 * ratioRange;
 
     hRatio->SetStats(0);
     hRatio->SetTitle("");
@@ -434,5 +443,200 @@ void Process_Uncorrected_FourierFit() {
     std::cout << "\n========================================" << std::endl;
     std::cout << "Uncorrected Fourier Fit Complete" << std::endl;
     std::cout << "Output: ./TemplateFit/EtaDiff/Uncorrected/" << std::endl;
+    std::cout << "========================================\n" << std::endl;
+}
+
+void CompareUncorrectedVsTemplateFit() {
+    gROOT->SetBatch(kTRUE);
+    gSystem->mkdir("./TemplateFit/EtaDiff/MethodComparison", kTRUE);
+
+    std::cout << "\n========================================" << std::endl;
+    std::cout << "Comparing Uncorrected vs TemplateFit Methods" << std::endl;
+    std::cout << "========================================\n" << std::endl;
+
+    std::vector<std::string> datasets = {
+        "LHC25af_pass2_615818",  // Ne-Ne outer
+        "LHC25af_pass2_615817",  // Ne-Ne inner
+        "LHC25ae_pass2_616549",  // O-O outer
+        "LHC25ae_pass2_618685",  // O-O inner
+        "LHC25af_pass2_617826",  // Ne-Ne inner variant
+        "LHC25af_pass2_617910"   // Ne-Ne outer variant
+    };
+
+    std::vector<std::pair<Double_t, Double_t>> etaBins = {
+        {-0.8, -0.7},
+        {0.7, 0.8}
+    };
+
+    for (const auto& dataset : datasets) {
+        std::cout << "Processing dataset: " << dataset << std::endl;
+
+        // Storage for both eta bins
+        std::vector<Double_t> etaPoints;
+        std::vector<Double_t> v2_uncorr, v2_uncorr_err, v2_template, v2_template_err;
+        std::vector<Double_t> v3_uncorr, v3_uncorr_err, v3_template, v3_template_err;
+        std::vector<Double_t> v4_uncorr, v4_uncorr_err, v4_template, v4_template_err;
+
+        for (const auto& [etaMin, etaMax] : etaBins) {
+            Double_t etaMid = (etaMin + etaMax) / 2.0;
+            etaPoints.push_back(etaMid);
+
+            // Read Uncorrected FourierFit results
+            std::string uncorrFile = Form("./TemplateFit/EtaDiff/Uncorrected/Vn_Uncorrected_%s_Cent_0_20.root", dataset.c_str());
+            TFile* fUncorr = TFile::Open(uncorrFile.c_str(), "READ");
+            if (fUncorr && fUncorr->IsOpen()) {
+                TGraphErrors* gV2 = (TGraphErrors*)fUncorr->Get("gV2_Uncorrected");
+                TGraphErrors* gV3 = (TGraphErrors*)fUncorr->Get("gV3_Uncorrected");
+                TGraphErrors* gV4 = (TGraphErrors*)fUncorr->Get("gV4_Uncorrected");
+                
+                if (gV2 && gV3 && gV4) {
+                    // Find point matching this eta
+                    for (int i = 0; i < gV2->GetN(); i++) {
+                        Double_t x, y;
+                        gV2->GetPoint(i, x, y);
+                        if (TMath::Abs(x - etaMid) < 0.06) {
+                            v2_uncorr.push_back(y);
+                            v2_uncorr_err.push_back(gV2->GetErrorY(i));
+                            gV3->GetPoint(i, x, y);
+                            v3_uncorr.push_back(y);
+                            v3_uncorr_err.push_back(gV3->GetErrorY(i));
+                            gV4->GetPoint(i, x, y);
+                            v4_uncorr.push_back(y);
+                            v4_uncorr_err.push_back(gV4->GetErrorY(i));
+                            break;
+                        }
+                    }
+                }
+                fUncorr->Close();
+            } else {
+                std::cout << "  Warning: Cannot open " << uncorrFile << std::endl;
+                v2_uncorr.push_back(0); v2_uncorr_err.push_back(0);
+                v3_uncorr.push_back(0); v3_uncorr_err.push_back(0);
+                v4_uncorr.push_back(0); v4_uncorr_err.push_back(0);
+            }
+
+            // Read TemplateFit results
+            std::string suffix = (etaMin < 0) ? Form("_%.1f_%.1f", etaMin, etaMax) : Form("_%.1f_%.1f", etaMin, etaMax);
+            std::string templateFile = Form("./TemplateFit/EtaDiff/Vn_%s_TPC_FT0C_TPCEta%s_Cent_0_20.root", 
+                                           dataset.c_str(), suffix.c_str());
+            TFile* fTemplate = TFile::Open(templateFile.c_str(), "READ");
+            if (fTemplate && fTemplate->IsOpen()) {
+                TH1D* hV2 = (TH1D*)fTemplate->Get("hV2");
+                TH1D* hV3 = (TH1D*)fTemplate->Get("hV3");
+                TH1D* hV4 = (TH1D*)fTemplate->Get("hV4");
+                
+                if (hV2 && hV3 && hV4) {
+                    v2_template.push_back(hV2->GetBinContent(1));
+                    v2_template_err.push_back(hV2->GetBinError(1));
+                    v3_template.push_back(hV3->GetBinContent(1));
+                    v3_template_err.push_back(hV3->GetBinError(1));
+                    v4_template.push_back(hV4->GetBinContent(1));
+                    v4_template_err.push_back(hV4->GetBinError(1));
+                }
+                fTemplate->Close();
+            } else {
+                std::cout << "  Warning: Cannot open " << templateFile << std::endl;
+                v2_template.push_back(0); v2_template_err.push_back(0);
+                v3_template.push_back(0); v3_template_err.push_back(0);
+                v4_template.push_back(0); v4_template_err.push_back(0);
+            }
+        }
+
+        // Create comparison graphs
+        TGraphErrors* gV2_uncorr = new TGraphErrors(etaPoints.size());
+        TGraphErrors* gV2_template = new TGraphErrors(etaPoints.size());
+        TGraphErrors* gV3_uncorr = new TGraphErrors(etaPoints.size());
+        TGraphErrors* gV3_template = new TGraphErrors(etaPoints.size());
+        TGraphErrors* gV4_uncorr = new TGraphErrors(etaPoints.size());
+        TGraphErrors* gV4_template = new TGraphErrors(etaPoints.size());
+
+        for (size_t i = 0; i < etaPoints.size(); i++) {
+            gV2_uncorr->SetPoint(i, etaPoints[i], v2_uncorr[i]);
+            gV2_uncorr->SetPointError(i, 0.05, v2_uncorr_err[i]);
+            gV2_template->SetPoint(i, etaPoints[i], v2_template[i]);
+            gV2_template->SetPointError(i, 0.05, v2_template_err[i]);
+
+            gV3_uncorr->SetPoint(i, etaPoints[i], v3_uncorr[i]);
+            gV3_uncorr->SetPointError(i, 0.05, v3_uncorr_err[i]);
+            gV3_template->SetPoint(i, etaPoints[i], v3_template[i]);
+            gV3_template->SetPointError(i, 0.05, v3_template_err[i]);
+
+            gV4_uncorr->SetPoint(i, etaPoints[i], v4_uncorr[i]);
+            gV4_uncorr->SetPointError(i, 0.05, v4_uncorr_err[i]);
+            gV4_template->SetPoint(i, etaPoints[i], v4_template[i]);
+            gV4_template->SetPointError(i, 0.05, v4_template_err[i]);
+        }
+
+        // Style settings
+        gV2_uncorr->SetMarkerStyle(20); gV2_uncorr->SetMarkerColor(kBlue); gV2_uncorr->SetLineColor(kBlue);
+        gV2_template->SetMarkerStyle(24); gV2_template->SetMarkerColor(kRed+1); gV2_template->SetLineColor(kRed+1);
+        gV3_uncorr->SetMarkerStyle(21); gV3_uncorr->SetMarkerColor(kGreen+2); gV3_uncorr->SetLineColor(kGreen+2);
+        gV3_template->SetMarkerStyle(25); gV3_template->SetMarkerColor(kMagenta+1); gV3_template->SetLineColor(kMagenta+1);
+        gV4_uncorr->SetMarkerStyle(22); gV4_uncorr->SetMarkerColor(kOrange+7); gV4_uncorr->SetLineColor(kOrange+7);
+        gV4_template->SetMarkerStyle(26); gV4_template->SetMarkerColor(kCyan+2); gV4_template->SetLineColor(kCyan+2);
+
+        // Create comparison plot
+        TCanvas* c = new TCanvas("cComp", "Method Comparison", 1400, 500);
+        c->Divide(3, 1);
+
+        // V2 panel
+        c->cd(1);
+        gPad->SetLeftMargin(0.15);
+        gPad->SetRightMargin(0.05);
+        gV2_uncorr->SetTitle(Form("V_{2}^{#Delta} Comparison - %s;TPC #eta;V_{2}^{#Delta}", dataset.c_str()));
+        gV2_uncorr->GetYaxis()->SetRangeUser(0.0, 0.004);
+        gV2_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
+        gV2_uncorr->Draw("AP");
+        gV2_template->Draw("P SAME");
+        TLegend* leg1 = new TLegend(0.18, 0.75, 0.55, 0.90);
+        leg1->SetBorderSize(0); leg1->SetFillStyle(0);
+        leg1->AddEntry(gV2_uncorr, "Uncorrected FourierFit", "lep");
+        leg1->AddEntry(gV2_template, "TemplateFit", "lep");
+        leg1->Draw();
+
+        // V3 panel
+        c->cd(2);
+        gPad->SetLeftMargin(0.15);
+        gPad->SetRightMargin(0.05);
+        gV3_uncorr->SetTitle(Form("V_{3}^{#Delta} Comparison - %s;TPC #eta;V_{3}^{#Delta}", dataset.c_str()));
+        gV3_uncorr->GetYaxis()->SetRangeUser(0.0, 0.0006);
+        gV3_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
+        gV3_uncorr->Draw("AP");
+        gV3_template->Draw("P SAME");
+        TLegend* leg2 = new TLegend(0.18, 0.75, 0.55, 0.90);
+        leg2->SetBorderSize(0); leg2->SetFillStyle(0);
+        leg2->AddEntry(gV3_uncorr, "Uncorrected FourierFit", "lep");
+        leg2->AddEntry(gV3_template, "TemplateFit", "lep");
+        leg2->Draw();
+
+        // V4 panel
+        c->cd(3);
+        gPad->SetLeftMargin(0.15);
+        gPad->SetRightMargin(0.05);
+        gV4_uncorr->SetTitle(Form("V_{4}^{#Delta} Comparison - %s;TPC #eta;V_{4}^{#Delta}", dataset.c_str()));
+        gV4_uncorr->GetYaxis()->SetRangeUser(-0.00005, 0.00015);
+        gV4_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
+        gV4_uncorr->Draw("AP");
+        gV4_template->Draw("P SAME");
+        TLegend* leg3 = new TLegend(0.18, 0.75, 0.55, 0.90);
+        leg3->SetBorderSize(0); leg3->SetFillStyle(0);
+        leg3->AddEntry(gV4_uncorr, "Uncorrected FourierFit", "lep");
+        leg3->AddEntry(gV4_template, "TemplateFit", "lep");
+        leg3->Draw();
+
+        std::string pdfName = Form("./TemplateFit/EtaDiff/MethodComparison/VnComparison_%s_Cent_0_20.pdf", dataset.c_str());
+        c->Print(pdfName.c_str());
+        std::cout << "  Created comparison: " << pdfName << std::endl;
+
+        delete leg1; delete leg2; delete leg3;
+        delete c;
+        delete gV2_uncorr; delete gV2_template;
+        delete gV3_uncorr; delete gV3_template;
+        delete gV4_uncorr; delete gV4_template;
+    }
+
+    std::cout << "\n========================================" << std::endl;
+    std::cout << "Method Comparison Complete" << std::endl;
+    std::cout << "Output: ./TemplateFit/EtaDiff/MethodComparison/" << std::endl;
     std::cout << "========================================\n" << std::endl;
 }
