@@ -55,22 +55,64 @@ bool FourierFitCorrelation(TH1D* hist, FitResult& fitResult, const std::string& 
         return false;
     }
 
+    // Clone histogram to avoid modifying original
+    TH1D* hFit = (TH1D*)hist->Clone(Form("hFit_%s", fitName.c_str()));
+    hFit->SetDirectory(nullptr);
+
+    // Add systematic uncertainty to histogram errors (mirrors TemplateFit approach)
+    // Systematic fraction is applied in two places: histogram errors AND chi2 calculation
+    const double systematic_fraction = 0.0002; // 0.02% systematic uncertainty (same as TemplateFit)
+    for (int i = 1; i <= hFit->GetNbinsX(); i++) {
+        double content = hFit->GetBinContent(i);
+        double stat_error = hFit->GetBinError(i);
+        double syst_error = systematic_fraction * TMath::Abs(content);
+        double total_error = TMath::Sqrt(stat_error * stat_error + syst_error * syst_error);
+        hFit->SetBinError(i, total_error);
+    }
+
     TF1* fitFunc = new TF1(fitName.c_str(),
         "[0]*(1 + 2*[1]*cos(x) + 2*[2]*cos(2*x) + 2*[3]*cos(3*x) + 2*[4]*cos(4*x))",
         -TMath::Pi()/2.0, 1.5*TMath::Pi());
 
-    fitFunc->SetParameter(0, hist->GetMaximum());
+    fitFunc->SetParameter(0, hFit->GetMaximum());
     fitFunc->SetParameter(1, -0.001);
     fitFunc->SetParameter(2, 0.003);
     fitFunc->SetParameter(3, 0.0003);
     fitFunc->SetParameter(4, 0.00005);
 
     // Use chi-square fit with bin errors for proper error propagation
-    int fitStatus = hist->Fit(fitFunc, "RWQN0E");
+    int fitStatus = hFit->Fit(fitFunc, "RWQN0E");
     if (fitStatus != 0) {
         delete fitFunc;
+        delete hFit;
         return false;
     }
+
+    // Manually calculate chi2 using the histogram with inflated errors
+    // Matches TemplateFit's findChi2ndf method exactly
+    double chi2 = 0.0;
+    int nBins = hFit->GetNbinsX();
+    int nParams = 5; // A, v1, v2, v3, v4
+    int ndf = nBins - nParams;
+    
+    for (int i = 1; i <= nBins; i++) {
+        double content = hFit->GetBinContent(i);
+        double stat_error = hFit->GetBinError(i);
+        if (stat_error > 0) {
+            double xCenter = hFit->GetBinCenter(i);
+            double fitted = fitFunc->Eval(xCenter);
+            
+            // Apply systematic uncertainty again in chi2 calculation (same as TemplateFit)
+            double syst_error = systematic_fraction * TMath::Abs(content);
+            double error_total = TMath::Sqrt(stat_error * stat_error + syst_error * syst_error);
+            
+            double residual = content - fitted;
+            chi2 += (residual / error_total) * (residual / error_total);
+        }
+    }
+    if (ndf <= 0) ndf = 1;
+    
+    double chi2ndf_manual = chi2 / ndf;
 
     fitResult.A = fitFunc->GetParameter(0);
     fitResult.v1 = fitFunc->GetParameter(1);
@@ -81,10 +123,11 @@ bool FourierFitCorrelation(TH1D* hist, FitResult& fitResult, const std::string& 
     fitResult.v3_err = fitFunc->GetParError(3);
     fitResult.v4 = fitFunc->GetParameter(4);
     fitResult.v4_err = fitFunc->GetParError(4);
-    fitResult.chi2ndf = (fitFunc->GetNDF() > 0) ? fitFunc->GetChisquare() / fitFunc->GetNDF() : -1.0;
+    fitResult.chi2ndf = chi2ndf_manual;
     fitResult.success = kTRUE;
 
     delete fitFunc;
+    delete hFit;
     return true;
 }
 

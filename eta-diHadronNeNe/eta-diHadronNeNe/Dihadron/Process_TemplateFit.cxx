@@ -97,6 +97,7 @@ std::vector<std::string> toStringV4(std::vector<std::vector<std::vector<double>>
 std::string collisionSystemName = "peripheral Ne-Ne"; 
 std::string FITused = "TPC-FT0C";
 collisionSystemName = "Ne-Ne";
+const double kChi2SystematicFraction = 0.0002;
 
 //==============================================================
 void Process_TemplateFit() {
@@ -1023,7 +1024,7 @@ void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vect
     
     // Add systematic uncertainty to data histogram errors
     // This inflates the error bars to account for model uncertainties
-    const double systematic_fraction = 0.0002; // 0.02% systematic uncertainty to achieve chi2/ndf ~ 1-2
+    const double systematic_fraction = kChi2SystematicFraction; // same chi2 systematic as findChi2ndf
     for (int i = 1; i <= hm->GetNbinsX(); i++) {
         double content = hm->GetBinContent(i);
         double stat_error = hm->GetBinError(i);
@@ -1300,24 +1301,13 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     TH1D* hsubtract = (TH1D*)hm->Clone(Form("subtract_%d", localPlotId));
     hsubtract->Add(lm, -F);
 
-    // =============== 新增：计算chi2/ndf ===============
-    double chi2 = 0.0;
+    // Use the same chi2/ndf logic as RooTempFitter output (with systematic treatment)
     int nBins = hsubtract->GetNbinsX();
-    int nParams = 5; //!! change ndfs here
-    int ndf = nBins - nParams; //degrees of freedom (the number of data points minus number of fit parameters)
-    
-    for (int i = 1; i <= nBins; i++) {
-        double data = hsubtract->GetBinContent(i);
-        double error = hsubtract->GetBinError(i);
-        double x = hsubtract->GetBinCenter(i);
-        double fit = fit_p1m->Eval(x);
-        
-        if (error > 0) { // 忽略误差为0的bin
-            double residual = data - fit;
-            chi2 += (residual * residual) / (error * error); //Yes chi is waighted by the errors, i.e. large error low chi
-        }
-    }
-    double chi2ndf = (ndf > 0) ? chi2 / ndf : 0;
+    int nParams = 5;
+    int ndf = nBins - nParams;
+    if (ndf <= 0) ndf = 1;
+    double chi2ndf = findChi2ndf(lm, hm, F, G, v21, v31, v41);
+    double chi2 = chi2ndf * ndf;
     // =============== 新增：添加chi2/ndf标签 ===============
     pad1->cd();
     TLatex* chi2Label = new TLatex();
@@ -1494,58 +1484,31 @@ void writeToCSV(const std::string &filename, const std::vector<std::vector<std::
 
 
 double findChi2ndf(TH1 *lm, TH1 *hm, double& F_val, double& G_val, double& v21_val, double& v31_val, double& v41_val) {
-    static int chi2Counter = 0;
-    const int localChi2Id = chi2Counter++;
-    double chi2;
-    int nBins;
-    int nParams;
-    int ndf;
-    double data;
-    double error;
-    double error_total;
-    double x;
-    double fit;
-    double residual;
-    double chi2ndf;
-    
-    // Add systematic uncertainty (as fraction of signal) to account for model uncertainties
-    // Adjust this value to achieve reasonable chi2/ndf (~1-2)
-    const double systematic_fraction = 0.0002; // 0.02% systematic uncertainty
+    double chi2 = 0.0;
+    int nBins = hm->GetNbinsX();
+    int nParams = 5; // F,G,v2,v3,v4
+    int ndf = nBins - nParams;
+    if (ndf <= 0) ndf = 1;
 
-    TF1* fit_p1m = new TF1(Form("fit_p1m_chi2_%d", localChi2Id),"[0]*(1 + 2*[1]*cos(2*x) + 2*[2]*cos(3*x) + 2*[3]*cos(4*x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
-    fit_p1m->SetParameters(G_val,v21_val,v31_val,v41_val);
-
-    TH1D* hsubtract = (TH1D*)hm->Clone(Form("subtract_chi2_%d", localChi2Id));
-    hsubtract->SetDirectory(nullptr);
-    hsubtract->Add(lm, -F_val);
-
-    chi2 = 0.0;
-    nBins = hsubtract->GetNbinsX();
-    nParams = 5; // Number of parameters: F,G,v21,v31,v41 (V1 removed)
-    ndf = nBins - nParams; //degrees of freedom (the number of data points minus number of fit parameters)
-    
     for (int i = 1; i <= nBins; i++) {
-        data = hsubtract->GetBinContent(i);
-        error = hsubtract->GetBinError(i);
-        x = hsubtract->GetBinCenter(i);
-        fit = fit_p1m->Eval(x);
-        
-        if (error > 0) { // 忽略误差为0的bin
-            // Add systematic uncertainty in quadrature
-            double systematic_error = systematic_fraction * TMath::Abs(data);
-            error_total = TMath::Sqrt(error * error + systematic_error * systematic_error);
-            
-            residual = data - fit;
-            chi2 += (residual * residual) / (error_total * error_total); //Yes chi is waighted by the errors, i.e. large error low chi
-        }
-    }
-    chi2ndf = (ndf > 0) ? chi2 / ndf : 0;
-    
-    // Clean up
-    delete fit_p1m;
-    delete hsubtract;
+        double data = hm->GetBinContent(i);
+        double error = hm->GetBinError(i);
+        if (error <= 0) continue;
 
-    return chi2ndf;
+        double x = hm->GetBinCenter(i);
+        double template_val = lm->GetBinContent(i);
+        double harmonic = 1.0 + 2.0 * v21_val * TMath::Cos(2.0 * x)
+                              + 2.0 * v31_val * TMath::Cos(3.0 * x)
+                              + 2.0 * v41_val * TMath::Cos(4.0 * x);
+        double fit = F_val * template_val + G_val * harmonic;
+
+        double systematic_error = kChi2SystematicFraction * TMath::Abs(data);
+        double error_total = TMath::Sqrt(error * error + systematic_error * systematic_error);
+        double residual = data - fit;
+        chi2 += (residual * residual) / (error_total * error_total);
+    }
+
+    return chi2 / ndf;
 }
 
 

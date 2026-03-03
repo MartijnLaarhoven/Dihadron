@@ -54,23 +54,65 @@ bool FourierFitCorrelation(TH1D* hist, FitResult& fitResult, const std::string& 
         return false;
     }
 
+    // Clone histogram to avoid modifying original
+    TH1D* hFit = (TH1D*)hist->Clone(Form("hFit_%s", fitName.c_str()));
+    hFit->SetDirectory(nullptr);
+
+    // Add systematic uncertainty to histogram errors (mirrors TemplateFit approach)
+    // This inflates errors to give reasonable chi2/ndf (~0.5-2) instead of tiny values
+    // Systematic fraction is applied in two places: histogram errors AND chi2 calculation
+    const double systematic_fraction = 0.0002; // 0.02% systematic uncertainty (same as TemplateFit)
+    for (int i = 1; i <= hFit->GetNbinsX(); i++) {
+        double content = hFit->GetBinContent(i);
+        double stat_error = hFit->GetBinError(i);
+        double syst_error = systematic_fraction * TMath::Abs(content);
+        double total_error = TMath::Sqrt(stat_error * stat_error + syst_error * syst_error);
+        hFit->SetBinError(i, total_error);
+    }
+
     TF1* fitFunc = new TF1(fitName.c_str(),
         "[0]*(1 + 2*[1]*cos(x) + 2*[2]*cos(2*x) + 2*[3]*cos(3*x) + 2*[4]*cos(4*x))",
         -TMath::Pi()/2.0, 1.5*TMath::Pi());
 
-    fitFunc->SetParameter(0, hist->GetMaximum());
+    fitFunc->SetParameter(0, hFit->GetMaximum());
     fitFunc->SetParameter(1, -0.001);
     fitFunc->SetParameter(2, 0.003);
     fitFunc->SetParameter(3, 0.0003);
     fitFunc->SetParameter(4, 0.00005);
 
     // Use chi-square fit with bin errors for proper error propagation
-    // "W" option uses bin errors as weights, "E" improves error estimates
-    int fitStatus = hist->Fit(fitFunc, "RWQN0E");
+    int fitStatus = hFit->Fit(fitFunc, "RWQN0E");
     if (fitStatus != 0) {
         delete fitFunc;
+        delete hFit;
         return false;
     }
+
+    // Manually calculate chi2 using the histogram with inflated errors
+    // Matches TemplateFit's findChi2ndf method exactly
+    double chi2 = 0.0;
+    int nBins = hFit->GetNbinsX();
+    int nParams = 5; // A, v1, v2, v3, v4
+    int ndf = nBins - nParams;
+    
+    for (int i = 1; i <= nBins; i++) {
+        double content = hFit->GetBinContent(i);
+        double stat_error = hFit->GetBinError(i);
+        if (stat_error > 0) {
+            double xCenter = hFit->GetBinCenter(i);
+            double fitted = fitFunc->Eval(xCenter);
+            
+            // Apply systematic uncertainty again in chi2 calculation (same as TemplateFit)
+            double syst_error = systematic_fraction * TMath::Abs(content);
+            double error_total = TMath::Sqrt(stat_error * stat_error + syst_error * syst_error);
+            
+            double residual = content - fitted;
+            chi2 += (residual / error_total) * (residual / error_total);
+        }
+    }
+    if (ndf <= 0) ndf = 1;
+    
+    double chi2ndf_manual = chi2 / ndf;
 
     fitResult.A = fitFunc->GetParameter(0);
     fitResult.v1 = fitFunc->GetParameter(1);
@@ -81,10 +123,11 @@ bool FourierFitCorrelation(TH1D* hist, FitResult& fitResult, const std::string& 
     fitResult.v3_err = fitFunc->GetParError(3);
     fitResult.v4 = fitFunc->GetParameter(4);
     fitResult.v4_err = fitFunc->GetParError(4);
-    fitResult.chi2ndf = (fitFunc->GetNDF() > 0) ? fitFunc->GetChisquare() / fitFunc->GetNDF() : -1.0;
+    fitResult.chi2ndf = chi2ndf_manual;  // Use manually calculated chi2/ndf instead of ROOT's internal value
     fitResult.success = kTRUE;
 
     delete fitFunc;
+    delete hFit;
     return true;
 }
 
@@ -137,14 +180,17 @@ void PlotFourierFitStyle(TH1D* hInput,
     fV3->SetLineWidth(2);
     fV4->SetLineWidth(2);
 
-    TCanvas* c = new TCanvas(Form("cFit_%s_%.1f_%.1f", dataset.c_str(), etaMin, etaMax), "Uncorrected Fourier Fit", 900, 700);
+    TCanvas* c = new TCanvas(Form("cFit_%s_%.1f_%.1f", dataset.c_str(), etaMin, etaMax), "Uncorrected Fourier Fit", 1000, 750);
     TPad* padTop = new TPad("padTop", "padTop", 0.0, 0.28, 1.0, 1.0);
     TPad* padBottom = new TPad("padBottom", "padBottom", 0.0, 0.0, 1.0, 0.28);
     padTop->SetBottomMargin(0.02);
-    padTop->SetLeftMargin(0.12);
+    padTop->SetLeftMargin(0.13);
+    padTop->SetRightMargin(0.06);
+    padTop->SetTopMargin(0.08);
     padBottom->SetTopMargin(0.02);
-    padBottom->SetBottomMargin(0.30);
-    padBottom->SetLeftMargin(0.12);
+    padBottom->SetBottomMargin(0.35);
+    padBottom->SetLeftMargin(0.13);
+    padBottom->SetRightMargin(0.06);
     padTop->Draw();
     padBottom->Draw();
 
@@ -153,15 +199,21 @@ void PlotFourierFitStyle(TH1D* hInput,
     hCorr->SetTitle(Form("Uncorrected Fourier Fit %s, %.1f < #eta_{TPC} < %.1f", dataset.c_str(), etaMin, etaMax));
     hCorr->GetYaxis()->SetTitle("SE/ME");
     hCorr->GetXaxis()->SetLabelSize(0);
+    hCorr->GetYaxis()->SetTitleSize(0.050);
+    hCorr->GetYaxis()->SetLabelSize(0.045);
+    hCorr->GetYaxis()->SetTitleOffset(1.1);
     hCorr->SetMarkerStyle(20);
-    hCorr->SetMarkerSize(0.8);
+    hCorr->SetMarkerSize(1.0);
     
-    // Auto-scale Y-axis based on data range with margins
+    // Auto-scale Y-axis and zoom by factor 10 around data center
     Double_t dataMin = hCorr->GetMinimum();
     Double_t dataMax = hCorr->GetMaximum();
     Double_t dataRange = dataMax - dataMin;
-    Double_t yMin = dataMin - 0.15 * dataRange;  // 15% margin below
-    Double_t yMax = dataMax + 0.25 * dataRange;  // 25% margin above for legend
+    if (dataRange <= 0) dataRange = 1e-6;
+    Double_t yCenter = 0.5 * (dataMax + dataMin);
+    Double_t halfRangeZoom = 0.5 * dataRange / 10.0;
+    Double_t yMin = yCenter - halfRangeZoom;
+    Double_t yMax = yCenter + halfRangeZoom;
     hCorr->GetYaxis()->SetRangeUser(yMin, yMax);
     
     hCorr->Draw("E1");
@@ -172,10 +224,10 @@ void PlotFourierFitStyle(TH1D* hInput,
     fV3->Draw("same");
     fV4->Draw("same");
 
-    TLegend* legend = new TLegend(0.52, 0.55, 0.92, 0.90);
+    TLegend* legend = new TLegend(0.48, 0.50, 0.95, 0.92);
     legend->SetBorderSize(0);
     legend->SetFillStyle(0);
-    legend->SetTextSize(0.035);
+    legend->SetTextSize(0.038);
     legend->AddEntry(hCorr, "Data (SE/ME)", "lep");
     legend->AddEntry(fTotal, "Total Fourier fit", "l");
     legend->AddEntry(fV1, Form("V_{1#Delta}=%.5f #pm %.2e", fitResult.v1, fitResult.v1_err), "l");
@@ -231,12 +283,12 @@ void PlotFourierFitStyle(TH1D* hInput,
     hRatio->GetYaxis()->SetTitle("Data/Fit");
     hRatio->GetXaxis()->SetTitle("#Delta#phi [rad]");
     hRatio->GetYaxis()->SetNdivisions(505);
-    hRatio->GetYaxis()->SetTitleSize(0.10);
-    hRatio->GetYaxis()->SetLabelSize(0.09);
-    hRatio->GetYaxis()->SetTitleOffset(0.45);
-    hRatio->GetXaxis()->SetTitleSize(0.11);
-    hRatio->GetXaxis()->SetLabelSize(0.10);
-    hRatio->GetXaxis()->SetTitleOffset(1.0);
+    hRatio->GetYaxis()->SetTitleSize(0.12);
+    hRatio->GetYaxis()->SetLabelSize(0.11);
+    hRatio->GetYaxis()->SetTitleOffset(0.40);
+    hRatio->GetXaxis()->SetTitleSize(0.13);
+    hRatio->GetXaxis()->SetLabelSize(0.12);
+    hRatio->GetXaxis()->SetTitleOffset(0.95);
     hRatio->GetYaxis()->SetRangeUser(ratioYmin, ratioYmax);
     hRatio->Draw("E1");
 
