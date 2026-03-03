@@ -186,37 +186,35 @@ void Process_CompareVnMethods() {
 
         // Style settings
         gV2_uncorr->SetMarkerStyle(20); gV2_uncorr->SetMarkerColor(kBlue); gV2_uncorr->SetLineColor(kBlue);
-        gV2_uncorr->SetMarkerSize(1.2);
+        gV2_uncorr->SetMarkerSize(1.5);
         gV2_template->SetMarkerStyle(24); gV2_template->SetMarkerColor(kRed+1); gV2_template->SetLineColor(kRed+1);
-        gV2_template->SetMarkerSize(1.2);
+        gV2_template->SetMarkerSize(1.5);
         
         gV3_uncorr->SetMarkerStyle(21); gV3_uncorr->SetMarkerColor(kBlue); gV3_uncorr->SetLineColor(kBlue);
-        gV3_uncorr->SetMarkerSize(1.2);
+        gV3_uncorr->SetMarkerSize(1.5);
         gV3_template->SetMarkerStyle(25); gV3_template->SetMarkerColor(kRed+1); gV3_template->SetLineColor(kRed+1);
-        gV3_template->SetMarkerSize(1.2);
+        gV3_template->SetMarkerSize(1.5);
         
         gV4_uncorr->SetMarkerStyle(22); gV4_uncorr->SetMarkerColor(kBlue); gV4_uncorr->SetLineColor(kBlue);
-        gV4_uncorr->SetMarkerSize(1.2);
+        gV4_uncorr->SetMarkerSize(1.5);
         gV4_template->SetMarkerStyle(26); gV4_template->SetMarkerColor(kRed+1); gV4_template->SetLineColor(kRed+1);
-        gV4_template->SetMarkerSize(1.2);
+        gV4_template->SetMarkerSize(1.5);
 
-        // Create comparison plot
-        TCanvas* c = new TCanvas("cComp", "Method Comparison", 1600, 600);
-        c->Divide(3, 1);
-
-        // V2 panel
-        c->cd(1);
-        gPad->SetLeftMargin(0.15);
-        gPad->SetRightMargin(0.05);
-        gPad->SetTopMargin(0.10);
-        gPad->SetBottomMargin(0.12);
-        gPad->SetGridy();
+        // Create V2 comparison plot
+        TCanvas* cV2 = new TCanvas("cV2", "V2 Comparison", 800, 700);
+        cV2->SetLeftMargin(0.15);
+        cV2->SetRightMargin(0.05);
+        cV2->SetTopMargin(0.08);
+        cV2->SetBottomMargin(0.12);
+        cV2->SetGridy();
         
         gV2_uncorr->SetTitle("");
         gV2_uncorr->GetYaxis()->SetTitle("V_{2}^{#Delta}");
         gV2_uncorr->GetXaxis()->SetTitle("TPC #eta");
-        gV2_uncorr->GetYaxis()->SetTitleSize(0.05);
-        gV2_uncorr->GetXaxis()->SetTitleSize(0.05);
+        gV2_uncorr->GetYaxis()->SetTitleSize(0.045);
+        gV2_uncorr->GetXaxis()->SetTitleSize(0.045);
+        gV2_uncorr->GetYaxis()->SetLabelSize(0.04);
+        gV2_uncorr->GetXaxis()->SetLabelSize(0.04);
         gV2_uncorr->GetYaxis()->SetRangeUser(0.0015, 0.0035);
         gV2_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
         gV2_uncorr->Draw("AP");
@@ -224,29 +222,35 @@ void Process_CompareVnMethods() {
         
         TLatex* lat1 = new TLatex();
         lat1->SetNDC();
-        lat1->SetTextSize(0.045);
-        lat1->DrawLatex(0.18, 0.92, Form("%s", datasetLabels[iDataset].c_str()));
+        lat1->SetTextSize(0.04);
+        lat1->DrawLatex(0.18, 0.94, Form("%s", datasetLabels[iDataset].c_str()));
         
-        TLegend* leg1 = new TLegend(0.18, 0.70, 0.65, 0.88);
+        TLegend* leg1 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg1->SetBorderSize(0); leg1->SetFillStyle(0);
-        leg1->SetTextSize(0.04);
+        leg1->SetTextSize(0.038);
         leg1->AddEntry(gV2_uncorr, "Uncorrected FourierFit", "lep");
         leg1->AddEntry(gV2_template, "TemplateFit (Bootstrap)", "lep");
         leg1->Draw();
 
-        // V3 panel
-        c->cd(2);
-        gPad->SetLeftMargin(0.15);
-        gPad->SetRightMargin(0.05);
-        gPad->SetTopMargin(0.10);
-        gPad->SetBottomMargin(0.12);
-        gPad->SetGridy();
+        std::string pdfNameV2 = Form("./TemplateFit/EtaDiff/MethodComparison/V2Comparison_%s_Cent_0_20.pdf", dataset.c_str());
+        cV2->SaveAs(pdfNameV2.c_str());
+        std::cout << "  Created: " << pdfNameV2 << std::endl;
+
+        // Create V3 comparison plot
+        TCanvas* cV3 = new TCanvas("cV3", "V3 Comparison", 800, 700);
+        cV3->SetLeftMargin(0.15);
+        cV3->SetRightMargin(0.05);
+        cV3->SetTopMargin(0.08);
+        cV3->SetBottomMargin(0.12);
+        cV3->SetGridy();
         
         gV3_uncorr->SetTitle("");
         gV3_uncorr->GetYaxis()->SetTitle("V_{3}^{#Delta}");
         gV3_uncorr->GetXaxis()->SetTitle("TPC #eta");
-        gV3_uncorr->GetYaxis()->SetTitleSize(0.05);
-        gV3_uncorr->GetXaxis()->SetTitleSize(0.05);
+        gV3_uncorr->GetYaxis()->SetTitleSize(0.045);
+        gV3_uncorr->GetXaxis()->SetTitleSize(0.045);
+        gV3_uncorr->GetYaxis()->SetLabelSize(0.04);
+        gV3_uncorr->GetXaxis()->SetLabelSize(0.04);
         gV3_uncorr->GetYaxis()->SetRangeUser(0.0002, 0.00045);
         gV3_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
         gV3_uncorr->Draw("AP");
@@ -254,29 +258,35 @@ void Process_CompareVnMethods() {
         
         TLatex* lat2 = new TLatex();
         lat2->SetNDC();
-        lat2->SetTextSize(0.045);
-        lat2->DrawLatex(0.18, 0.92, Form("%s", datasetLabels[iDataset].c_str()));
+        lat2->SetTextSize(0.04);
+        lat2->DrawLatex(0.18, 0.94, Form("%s", datasetLabels[iDataset].c_str()));
         
-        TLegend* leg2 = new TLegend(0.18, 0.70, 0.65, 0.88);
+        TLegend* leg2 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg2->SetBorderSize(0); leg2->SetFillStyle(0);
-        leg2->SetTextSize(0.04);
+        leg2->SetTextSize(0.038);
         leg2->AddEntry(gV3_uncorr, "Uncorrected FourierFit", "lep");
         leg2->AddEntry(gV3_template, "TemplateFit (Bootstrap)", "lep");
         leg2->Draw();
 
-        // V4 panel
-        c->cd(3);
-        gPad->SetLeftMargin(0.15);
-        gPad->SetRightMargin(0.05);
-        gPad->SetTopMargin(0.10);
-        gPad->SetBottomMargin(0.12);
-        gPad->SetGridy();
+        std::string pdfNameV3 = Form("./TemplateFit/EtaDiff/MethodComparison/V3Comparison_%s_Cent_0_20.pdf", dataset.c_str());
+        cV3->SaveAs(pdfNameV3.c_str());
+        std::cout << "  Created: " << pdfNameV3 << std::endl;
+
+        // Create V4 comparison plot
+        TCanvas* cV4 = new TCanvas("cV4", "V4 Comparison", 800, 700);
+        cV4->SetLeftMargin(0.15);
+        cV4->SetRightMargin(0.05);
+        cV4->SetTopMargin(0.08);
+        cV4->SetBottomMargin(0.12);
+        cV4->SetGridy();
         
         gV4_uncorr->SetTitle("");
         gV4_uncorr->GetYaxis()->SetTitle("V_{4}^{#Delta}");
         gV4_uncorr->GetXaxis()->SetTitle("TPC #eta");
-        gV4_uncorr->GetYaxis()->SetTitleSize(0.05);
-        gV4_uncorr->GetXaxis()->SetTitleSize(0.05);
+        gV4_uncorr->GetYaxis()->SetTitleSize(0.045);
+        gV4_uncorr->GetXaxis()->SetTitleSize(0.045);
+        gV4_uncorr->GetYaxis()->SetLabelSize(0.04);
+        gV4_uncorr->GetXaxis()->SetLabelSize(0.04);
         gV4_uncorr->GetYaxis()->SetRangeUser(0.00, 0.00012);
         gV4_uncorr->GetXaxis()->SetLimits(-1.0, 1.0);
         gV4_uncorr->Draw("AP");
@@ -284,23 +294,23 @@ void Process_CompareVnMethods() {
         
         TLatex* lat3 = new TLatex();
         lat3->SetNDC();
-        lat3->SetTextSize(0.045);
-        lat3->DrawLatex(0.18, 0.92, Form("%s", datasetLabels[iDataset].c_str()));
+        lat3->SetTextSize(0.04);
+        lat3->DrawLatex(0.18, 0.94, Form("%s", datasetLabels[iDataset].c_str()));
         
-        TLegend* leg3 = new TLegend(0.18, 0.70, 0.65, 0.88);
+        TLegend* leg3 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg3->SetBorderSize(0); leg3->SetFillStyle(0);
-        leg3->SetTextSize(0.04);
+        leg3->SetTextSize(0.038);
         leg3->AddEntry(gV4_uncorr, "Uncorrected FourierFit", "lep");
         leg3->AddEntry(gV4_template, "TemplateFit (Bootstrap)", "lep");
         leg3->Draw();
 
-        std::string pdfName = Form("./TemplateFit/EtaDiff/MethodComparison/VnComparison_%s_Cent_0_20.pdf", dataset.c_str());
-        c->SaveAs(pdfName.c_str());
-        std::cout << "  Created: " << pdfName << std::endl;
+        std::string pdfNameV4 = Form("./TemplateFit/EtaDiff/MethodComparison/V4Comparison_%s_Cent_0_20.pdf", dataset.c_str());
+        cV4->SaveAs(pdfNameV4.c_str());
+        std::cout << "  Created: " << pdfNameV4 << std::endl;
 
         delete lat1; delete lat2; delete lat3;
         delete leg1; delete leg2; delete leg3;
-        delete c;
+        delete cV2; delete cV3; delete cV4;
         delete gV2_uncorr; delete gV2_template;
         delete gV3_uncorr; delete gV3_template;
         delete gV4_uncorr; delete gV4_template;
