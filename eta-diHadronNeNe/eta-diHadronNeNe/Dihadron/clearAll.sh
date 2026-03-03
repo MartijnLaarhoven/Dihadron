@@ -13,11 +13,12 @@ echo "Creating TemplateFit structure..."
 mkdir -p TemplateFit/PDFs
 mkdir -p TemplateFit/EtaDiff/PDFs
 mkdir -p TemplateFit/EtaDiff/MethodComparison
+mkdir -p TemplateFit/EtaDiff/Bootstrap_FourierFit
 mkdir -p TemplateFit/PeripheralSubtracted/EtaDiff/PDFs
 mkdir -p TemplateFit/Uncorrected_FourierFit/EtaDiff
 mkdir -p TemplateFit/Comparisons/PDFs
 
 echo "Directory structure created successfully!"
 echo ""
-echo "Ready to run: ./run_full_analysis.sh"
+echo "Ready to run: ./runAll.sh"
 

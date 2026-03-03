@@ -1,7 +1,7 @@
 /*
  * @Author: Martijn Laarhoven (martijn.laarhoven@cern.ch)
  * @Date: 2026-03-03
- * Compare V2Delta, V3Delta, V4Delta from Uncorrected FourierFit vs TemplateFit methods
+ * Compare V2Delta, V3Delta, V4Delta from Bootstrap FourierFit vs TemplateFit methods
  * Creates side-by-side comparison plots for each dataset
  */
 
@@ -69,17 +69,17 @@ void Process_CompareVnMethods() {
             Double_t etaMid = (etaMin + etaMax) / 2.0;
             etaPoints.push_back(etaMid);
 
-            // Read Uncorrected FourierFit results
-            TString uncorrFile = Form("./TemplateFit/EtaDiff/Uncorrected/Vn_Uncorrected_%s_Cent_0_20.root", dataset.c_str());
-            TFile* fUncorr = TFile::Open(uncorrFile.Data(), "READ");
-            bool foundUncorr = false;
+            // Read Bootstrap FourierFit results
+            TString fourierFile = Form("./TemplateFit/EtaDiff/Bootstrap_FourierFit/Vn_Bootstrap_FourierFit_%s_Cent_0_20.root", dataset.c_str());
+            TFile* fFourier = TFile::Open(fourierFile.Data(), "READ");
+            bool foundFourier = false;
             
-            if (fUncorr && !fUncorr->IsZombie()) {
-                TGraphErrors* gV2 = (TGraphErrors*)fUncorr->Get("gV2_Uncorrected");
-                TGraphErrors* gV3 = (TGraphErrors*)fUncorr->Get("gV3_Uncorrected");
-                TGraphErrors* gV4 = (TGraphErrors*)fUncorr->Get("gV4_Uncorrected");  // May not exist
+            if (fFourier && !fFourier->IsZombie()) {
+                TGraphErrors* gV2 = (TGraphErrors*)fFourier->Get("gV2_Bootstrap_FourierFit");
+                TGraphErrors* gV3 = (TGraphErrors*)fFourier->Get("gV3_Bootstrap_FourierFit");
+                TGraphErrors* gV4 = (TGraphErrors*)fFourier->Get("gV4_Bootstrap_FourierFit");
                 
-                if (gV2 && gV3) {  // V4 is optional
+                if (gV2 && gV3 && gV4) {  // All should exist now
                     // Find point matching this eta (check all points)
                     for (int i = 0; i < gV2->GetN(); i++) {
                         Double_t x, y;
@@ -91,26 +91,21 @@ void Process_CompareVnMethods() {
                             gV3->GetPoint(i, x, y);
                             v3_uncorr.push_back(y);
                             v3_uncorr_err.push_back(gV3->GetErrorY(i));
-                            if (gV4) {
-                                gV4->GetPoint(i, x, y);
-                                v4_uncorr.push_back(y);
-                                v4_uncorr_err.push_back(gV4->GetErrorY(i));
-                            } else {
-                                v4_uncorr.push_back(0);
-                                v4_uncorr_err.push_back(0);
-                            }
-                            foundUncorr = true;
+                            gV4->GetPoint(i, x, y);
+                            v4_uncorr.push_back(y);
+                            v4_uncorr_err.push_back(gV4->GetErrorY(i));
+                            foundFourier = true;
                             break;
                         }
                     }
                 } else {
-                    Printf("  Error: Cannot get V2/V3 TGraphErrors from file!");
+                    Printf("  Error: Cannot get V2/V3/V4 TGraphErrors from Bootstrap FourierFit file!");
                 }
-                fUncorr->Close();
+                fFourier->Close();
             }
             
-            if (!foundUncorr) {
-                Printf("  Warning: Cannot read Uncorrected data for eta=%.2f from %s", etaMid, uncorrFile.Data());
+            if (!foundFourier) {
+                Printf("  Warning: Cannot read Bootstrap FourierFit data for eta=%.2f from %s", etaMid, fourierFile.Data());
                 v2_uncorr.push_back(0); v2_uncorr_err.push_back(0);
                 v3_uncorr.push_back(0); v3_uncorr_err.push_back(0);
                 v4_uncorr.push_back(0); v4_uncorr_err.push_back(0);
@@ -152,7 +147,7 @@ void Process_CompareVnMethods() {
         if (v2_uncorr.size() == etaPoints.size() && v2_template.size() == etaPoints.size()) {
             std::cout << "  V2Δ comparison:" << std::endl;
             for (size_t i = 0; i < etaPoints.size(); i++) {
-                Printf("    η=%.2f: Uncorr=%.5f±%.2e, Template=%.5f±%.2e (diff=%.5f)", 
+                Printf("    η=%.2f: Fourier=%.5f±%.2e, Template=%.5f±%.2e (diff=%.5f)", 
                        etaPoints[i], v2_uncorr[i], v2_uncorr_err[i],
                        v2_template[i], v2_template_err[i], 
                        (v2_uncorr[i] - v2_template[i]));
@@ -228,8 +223,8 @@ void Process_CompareVnMethods() {
         TLegend* leg1 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg1->SetBorderSize(0); leg1->SetFillStyle(0);
         leg1->SetTextSize(0.038);
-        leg1->AddEntry(gV2_uncorr, "Uncorrected FourierFit", "lep");
-        leg1->AddEntry(gV2_template, "TemplateFit (Bootstrap)", "lep");
+        leg1->AddEntry(gV2_uncorr, "FourierFit", "lep");
+        leg1->AddEntry(gV2_template, "TemplateFit", "lep");
         leg1->Draw();
 
         std::string pdfNameV2 = Form("./TemplateFit/EtaDiff/MethodComparison/V2Comparison_%s_Cent_0_20.pdf", dataset.c_str());
@@ -264,8 +259,8 @@ void Process_CompareVnMethods() {
         TLegend* leg2 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg2->SetBorderSize(0); leg2->SetFillStyle(0);
         leg2->SetTextSize(0.038);
-        leg2->AddEntry(gV3_uncorr, "Uncorrected FourierFit", "lep");
-        leg2->AddEntry(gV3_template, "TemplateFit (Bootstrap)", "lep");
+        leg2->AddEntry(gV3_uncorr, "FourierFit", "lep");
+        leg2->AddEntry(gV3_template, "TemplateFit", "lep");
         leg2->Draw();
 
         std::string pdfNameV3 = Form("./TemplateFit/EtaDiff/MethodComparison/V3Comparison_%s_Cent_0_20.pdf", dataset.c_str());
@@ -300,8 +295,8 @@ void Process_CompareVnMethods() {
         TLegend* leg3 = new TLegend(0.18, 0.75, 0.65, 0.88);
         leg3->SetBorderSize(0); leg3->SetFillStyle(0);
         leg3->SetTextSize(0.038);
-        leg3->AddEntry(gV4_uncorr, "Uncorrected FourierFit", "lep");
-        leg3->AddEntry(gV4_template, "TemplateFit (Bootstrap)", "lep");
+        leg3->AddEntry(gV4_uncorr, "FourierFit", "lep");
+        leg3->AddEntry(gV4_template, "TemplateFit", "lep");
         leg3->Draw();
 
         std::string pdfNameV4 = Form("./TemplateFit/EtaDiff/MethodComparison/V4Comparison_%s_Cent_0_20.pdf", dataset.c_str());
