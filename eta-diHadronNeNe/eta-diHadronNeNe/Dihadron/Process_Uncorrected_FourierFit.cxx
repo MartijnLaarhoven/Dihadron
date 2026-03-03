@@ -205,15 +205,12 @@ void PlotFourierFitStyle(TH1D* hInput,
     hCorr->SetMarkerStyle(20);
     hCorr->SetMarkerSize(1.0);
     
-    // Auto-scale Y-axis and zoom by factor 10 around data center
+    // Auto-scale Y-axis based on data range with margins
     Double_t dataMin = hCorr->GetMinimum();
     Double_t dataMax = hCorr->GetMaximum();
     Double_t dataRange = dataMax - dataMin;
-    if (dataRange <= 0) dataRange = 1e-6;
-    Double_t yCenter = 0.5 * (dataMax + dataMin);
-    Double_t halfRangeZoom = 0.5 * dataRange / 10.0;
-    Double_t yMin = yCenter - halfRangeZoom;
-    Double_t yMax = yCenter + halfRangeZoom;
+    Double_t yMin = dataMin - 0.15 * dataRange;  // 15% margin below
+    Double_t yMax = dataMax + 0.25 * dataRange;  // 25% margin above for legend
     hCorr->GetYaxis()->SetRangeUser(yMin, yMax);
     
     hCorr->Draw("E1");
