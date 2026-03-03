@@ -226,7 +226,7 @@ void PlotFourierFitStyle(TH1D* hInput,
     legend->SetFillStyle(0);
     legend->SetTextSize(0.038);
     legend->AddEntry(hCorr, "Data (SE/ME)", "lep");
-    legend->AddEntry(fTotal, "Total Fourier fit", "l");
+    legend->AddEntry(fTotal, "Total Fourier Fit", "l");
     legend->AddEntry(fV1, Form("V_{1#Delta}=%.5f #pm %.2e", fitResult.v1, fitResult.v1_err), "l");
     legend->AddEntry(fV2, Form("V_{2#Delta}=%.5f #pm %.2e", fitResult.v2, fitResult.v2_err), "l");
     legend->AddEntry(fV3, Form("V_{3#Delta}=%.5f #pm %.2e", fitResult.v3, fitResult.v3_err), "l");
@@ -265,10 +265,10 @@ void PlotFourierFitStyle(TH1D* hInput,
     
     // Auto-scale ratio plot - always zoom to show variation
     Double_t ratioRange = ratioMax - ratioMin;
-    if (ratioRange < 0.02) {
+    if (ratioRange < 0.002) {
         // Very tight fit - zoom in to show structure
         Double_t ratioMid = (ratioMin + ratioMax) / 2.0;
-        ratioRange = 0.02;  // Force minimum visible range of 2%
+        ratioRange = 0.002;  // Force minimum visible range of 2%
         ratioMin = ratioMid - ratioRange / 2.0;
         ratioMax = ratioMid + ratioRange / 2.0;
     }
