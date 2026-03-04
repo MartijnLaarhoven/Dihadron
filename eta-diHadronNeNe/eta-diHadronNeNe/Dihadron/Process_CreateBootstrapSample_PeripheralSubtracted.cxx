@@ -34,43 +34,36 @@ void CreateBootstrapSample_PeripheralSub(std::string fileNameSuffix, Bool_t isNc
 void CreateBootstrapSample_PeripheralSub_EtaDiff(std::string fileNameSuffix, Bool_t isNch, Int_t minRange, Int_t maxRange, Double_t etaMin, Double_t etaMax, Int_t periMin, Int_t periMax);
 
 void Process_CreateBootstrapSample_PeripheralSubtracted() {
-    // Define eta bins for both configurations
-    std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0};
-    std::vector<float> etaBinsPos = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
-    
+    // Available eta bins in current ProcessOutput/EtaDiff (FT0C)
+    std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6};
+    std::vector<float> etaBinsPos = {0.6,0.7,0.8};
+
     std::vector<InputUnit> inputList;
-    std::string inputFileNameNew = "LHC25ae_pass2_604830";
-    std::string inputFileNameNeStd = "LHC25af_pass2_611697";
-    std::string inputFileNameNeRev = "LHC25af_pass2_604820";
-    
     const Int_t periMin = 80;
     const Int_t periMax = 100;
-    
-    inputList.push_back(InputUnit("LHC25ae_pass2_604826", kCent, kEtaDiffOff, 0, 20, periMin, periMax));
-    inputList.push_back(InputUnit("LHC25ae_pass2_604826", kCent, kEtaDiffOn, 0, 20, periMin, periMax));
 
-    inputList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOff, 0, 20, periMin, periMax));
-    inputList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOn, 0, 20, periMin, periMax));
+    std::vector<std::string> datasets = {
+        "LHC25ae_pass2_616549",
+        "LHC25ae_pass2_618685",
+        "LHC25af_pass2_615818",
+        "LHC25af_pass2_615817"
+    };
 
-    inputList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOff, 0, 20, periMin, periMax));
-    inputList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOn, 0, 20, periMin, periMax));
-
-    inputList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOff, 0, 20, periMin, periMax));
-    inputList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOn, 0, 20, periMin, periMax));
+    for (const auto& ds : datasets) {
+        inputList.push_back(InputUnit(ds, kCent, kEtaDiffOn, 0, 20, periMin, periMax));
+    }
 
     for (auto input : inputList) {
-        if (input.isEtadiff) {
-            std::cout << "Processing Bootstrap Sample (PeripheralSub) eta diff: " << input.fileNameSuffix << std::endl;
-            // Use positive bins for reversed datasets, negative bins for standard
-            std::vector<float>& etaBinsToUse = (input.fileNameSuffix == inputFileNameNew || input.fileNameSuffix == inputFileNameNeRev) ? etaBinsPos : etaBinsNeg;
-            for (int iEta = 0; iEta < etaBinsToUse.size() - 1; iEta++) {
-                double etaMin = etaBinsToUse[iEta];
-                double etaMax = etaBinsToUse[iEta + 1];
-                CreateBootstrapSample_PeripheralSub_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, input.periMin, input.periMax);
-            }
-        } else {
-            std::cout << "Processing Bootstrap Sample (PeripheralSub): " << input.fileNameSuffix << std::endl;
-            CreateBootstrapSample_PeripheralSub(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, input.periMin, input.periMax);
+        std::cout << "Processing Bootstrap Sample (PeripheralSub) eta diff: " << input.fileNameSuffix << std::endl;
+        for (int iEta = 0; iEta < (int)etaBinsNeg.size() - 1; iEta++) {
+            double etaMin = etaBinsNeg[iEta];
+            double etaMax = etaBinsNeg[iEta + 1];
+            CreateBootstrapSample_PeripheralSub_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, input.periMin, input.periMax);
+        }
+        for (int iEta = 0; iEta < (int)etaBinsPos.size() - 1; iEta++) {
+            double etaMin = etaBinsPos[iEta];
+            double etaMax = etaBinsPos[iEta + 1];
+            CreateBootstrapSample_PeripheralSub_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, input.periMin, input.periMax);
         }
     }
 }

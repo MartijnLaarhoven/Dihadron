@@ -35,6 +35,7 @@ struct InputUnit {
 // global variables
 std::string collisionSystemName = "peripheral NeNe";
 std::string additionalSuffix = "";
+std::string detectorTag = "TPC_FT0C";
 
 // Helper function to set collision system name based on filename
 std::string GetCollisionSystemName(const std::string& filename) {
@@ -81,58 +82,45 @@ void Process_PeripheralSubtraction() {
 	// 不显示窗口
 	gROOT->SetBatch(kTRUE);
 
-	// Define eta bins for both configurations
-	std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0};
-	std::vector<float> etaBinsPos = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
+	// Available eta bins in current ProcessOutput/EtaDiff (FT0C)
+	std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6};
+	std::vector<float> etaBinsPos = {0.6,0.7,0.8};
 
 	std::vector<InputUnit> inputList;
 	additionalSuffix = "";
 
-	// Set collision system name based on filename
-	std::string inputFileName = "LHC25ae_pass2_604826";
-	collisionSystemName = GetCollisionSystemName(inputFileName);
-
-	// Centrality bins to subtract peripheral from
-	inputList.push_back(InputUnit(inputFileName, kCent, kEtaDiffOff, 0, 20));
-	inputList.push_back(InputUnit(inputFileName, kCent, kEtaDiffOn, 0, 20));
-
-	// Also run for the new dataset (same configuration)
-	std::string inputFileNameNew = "LHC25ae_pass2_604830";
-	inputList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOff, 0, 20));
-	inputList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOn, 0, 20));
-
-	// Also run for Ne-Ne datasets
-	std::string inputFileNameNeStd = "LHC25af_pass2_611697";
-	inputList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOff, 0, 20));
-	inputList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOn, 0, 20));
-
-	std::string inputFileNameNeRev = "LHC25af_pass2_604820";
-	inputList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOff, 0, 20));
-	inputList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOn, 0, 20));
+	// Current datasets (same set used in Fourier/Template comparisons)
+	std::vector<std::string> datasets = {
+		"LHC25ae_pass2_616549",
+		"LHC25ae_pass2_618685",
+		"LHC25af_pass2_615818",
+		"LHC25af_pass2_615817"
+	};
+	for (const auto& ds : datasets) {
+		inputList.push_back(InputUnit(ds, kCent, kEtaDiffOn, 0, 20));
+	}
 
 	const Int_t periMin = 80;
 	const Int_t periMax = 100;
 
 	for (auto input : inputList) {
-		if (input.isEtadiff) {
-			// Use positive bins for reversed datasets, negative bins for standard
-			std::vector<float>& etaBinsToUse = (input.fileNameSuffix == inputFileNameNew || input.fileNameSuffix == inputFileNameNeRev) ? etaBinsPos : etaBinsNeg;
-			for (int iEta = 0; iEta < etaBinsToUse.size() - 1; iEta++) {
-				double etaMin = etaBinsToUse[iEta];
-				double etaMax = etaBinsToUse[iEta + 1];
-				PeripheralSubtraction_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, periMin, periMax, input.isMc);
-			}
+		for (int iEta = 0; iEta < (int)etaBinsNeg.size() - 1; iEta++) {
+			double etaMin = etaBinsNeg[iEta];
+			double etaMax = etaBinsNeg[iEta + 1];
+			PeripheralSubtraction_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, periMin, periMax, input.isMc);
 		}
-		else {
-			PeripheralSubtraction_givenRange(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, periMin, periMax, input.isMc);
+		for (int iEta = 0; iEta < (int)etaBinsPos.size() - 1; iEta++) {
+			double etaMin = etaBinsPos[iEta];
+			double etaMax = etaBinsPos[iEta + 1];
+			PeripheralSubtraction_givenRange_EtaDiff(input.fileNameSuffix, input.isNch, input.minRange, input.maxRange, etaMin, etaMax, periMin, periMax, input.isMc);
 		}
 	}
 }
 
 void PeripheralSubtraction_givenRange(std::string fileNameSuffix, Bool_t isNch, Int_t minRange, Int_t maxRange, Int_t periMin, Int_t periMax, Bool_t isMc) {
 	std::string splitName = isNch ? "Mult" : "Cent";
-	std::string inputCentral = Form("./ProcessOutput/Mixed_%s%s_%s_%i_%i.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(minRange), int(maxRange));
-	std::string inputPeripheral = Form("./ProcessOutput/Mixed_%s%s_%s_%i_%i.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(periMin), int(periMax));
+	std::string inputCentral = Form("./ProcessOutput/Mixed_%s%s_%s_%i_%i_%s.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(minRange), int(maxRange), detectorTag.c_str());
+	std::string inputPeripheral = Form("./ProcessOutput/Mixed_%s%s_%s_%i_%i_%s.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(periMin), int(periMax), detectorTag.c_str());
 
 	TFile* fCent = TFile::Open(inputCentral.c_str(), "READ");
 	if (!fCent || !fCent->IsOpen()) {
@@ -161,21 +149,21 @@ void PeripheralSubtraction_givenRange(std::string fileNameSuffix, Bool_t isNch, 
 	double scale = ComputeScaleByIntegral(hCent, hPeri);
 	double y0 = ComputeZYAMBaseline(hPeri);
 	
-	// ZYAM method: subtract (F_peri - Y0) from central
-	// This gives: F_central - F_peri + Y0
+	// ZYAM template-subtraction method:
+	// C_sub = C_central - (F * Y_peri - Y0)
 	TH1D* hSub = (TH1D*)hCent->Clone(Form("hPhiSameOverMixed_Sub_%d_%d", minRange, maxRange));
-	hSub->SetTitle(Form("Central - (Peripheral - Y0) (ZYAM, Y0=%.4f); #Delta#phi [rad]; S/M", y0));
+	hSub->SetTitle(Form("Central - (F#timesPeripheral - Y0) (ZYAM, F=%.4f, Y0=%.4f); #Delta#phi [rad]; S/M", scale, y0));
 	
-	// Subtract peripheral with ZYAM baseline subtraction
+	// Subtract scaled peripheral with ZYAM baseline subtraction
 	for (Int_t bin = 1; bin <= hPeri->GetNbinsX(); ++bin) {
 		Double_t centContent = hCent->GetBinContent(bin);
 		Double_t periContent = hPeri->GetBinContent(bin);
 		Double_t periError = hPeri->GetBinError(bin);
 		Double_t centError = hCent->GetBinError(bin);
 		
-		// Apply ZYAM: subtract (peri - y0)
-		Double_t subContent = centContent - (periContent - y0);
-		Double_t subError = TMath::Sqrt(centError*centError + periError*periError);
+		// Apply ZYAM template subtraction: central - (scale*peri - y0)
+		Double_t subContent = centContent - (scale * periContent - y0);
+		Double_t subError = TMath::Sqrt(centError*centError + (scale * periError)*(scale * periError));
 		
 		hSub->SetBinContent(bin, subContent);
 		hSub->SetBinError(bin, subError);
@@ -208,8 +196,8 @@ void PeripheralSubtraction_givenRange(std::string fileNameSuffix, Bool_t isNch, 
 
 void PeripheralSubtraction_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t isNch, Int_t minRange, Int_t maxRange, Double_t etaMin, Double_t etaMax, Int_t periMin, Int_t periMax, Bool_t isMc) {
 	std::string splitName = isNch ? "Mult" : "Cent";
-	std::string inputCentral = Form("./ProcessOutput/EtaDiff/Mixed_%s%s_%s_%i_%i_Eta_%0.1f_%0.1f.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(minRange), int(maxRange), etaMin, etaMax);
-	std::string inputPeripheral = Form("./ProcessOutput/EtaDiff/Mixed_%s%s_%s_%i_%i_Eta_%0.1f_%0.1f.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(periMin), int(periMax), etaMin, etaMax);
+	std::string inputCentral = Form("./ProcessOutput/EtaDiff/Mixed_%s%s_%s_%i_%i_Eta_%0.1f_%0.1f_%s.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(minRange), int(maxRange), etaMin, etaMax, detectorTag.c_str());
+	std::string inputPeripheral = Form("./ProcessOutput/EtaDiff/Mixed_%s%s_%s_%i_%i_Eta_%0.1f_%0.1f_%s.root", fileNameSuffix.c_str(), additionalSuffix.c_str(), splitName.c_str(), int(periMin), int(periMax), etaMin, etaMax, detectorTag.c_str());
 
 	TFile* fCent = TFile::Open(inputCentral.c_str(), "READ");
 	if (!fCent || !fCent->IsOpen()) {
@@ -240,20 +228,21 @@ void PeripheralSubtraction_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t
 	double scale = ComputeScaleByIntegral(hCent, hPeri);
 	double y0 = ComputeZYAMBaseline(hPeri);
 	
-	// ZYAM method: subtract (F_peri - Y0) from central
+	// ZYAM template-subtraction method:
+	// C_sub = C_central - (F * Y_peri - Y0)
 	TH1D* hSub = (TH1D*)hCent->Clone(Form("hPhiSameOverMixed_Sub_%d_%d", minRange, maxRange));
-	hSub->SetTitle(Form("Central - (Peripheral - Y0) (ZYAM, Y0=%.4f); #Delta#phi [rad]; S/M", y0));
+	hSub->SetTitle(Form("Central - (F#timesPeripheral - Y0) (ZYAM, F=%.4f, Y0=%.4f); #Delta#phi [rad]; S/M", scale, y0));
 	
-	// Subtract peripheral with ZYAM baseline subtraction
+	// Subtract scaled peripheral with ZYAM baseline subtraction
 	for (Int_t bin = 1; bin <= hPeri->GetNbinsX(); ++bin) {
 		Double_t centContent = hCent->GetBinContent(bin);
 		Double_t periContent = hPeri->GetBinContent(bin);
 		Double_t periError = hPeri->GetBinError(bin);
 		Double_t centError = hCent->GetBinError(bin);
 		
-		// Apply ZYAM: subtract (peri - y0)
-		Double_t subContent = centContent - (periContent - y0);
-		Double_t subError = TMath::Sqrt(centError*centError + periError*periError);
+		// Apply ZYAM template subtraction: central - (scale*peri - y0)
+		Double_t subContent = centContent - (scale * periContent - y0);
+		Double_t subError = TMath::Sqrt(centError*centError + (scale * periError)*(scale * periError));
 		
 		hSub->SetBinContent(bin, subContent);
 		hSub->SetBinError(bin, subError);
@@ -262,7 +251,7 @@ void PeripheralSubtraction_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t
 	TH2D* hSub2D = nullptr;
 	if (hCent2D && hPeri2D) {
 		hSub2D = (TH2D*)hCent2D->Clone("hPhiEtaSMsum_Sub");
-		hSub2D->SetTitle(Form("Central - (Peripheral - Y0) (ZYAM, Y0=%.4f); #Delta#phi [rad]; #Delta#eta", y0));
+		hSub2D->SetTitle(Form("Central - (F#timesPeripheral - Y0) (ZYAM, F=%.4f, Y0=%.4f); #Delta#phi [rad]; #Delta#eta", scale, y0));
 		
 		// Apply ZYAM to 2D histogram
 		for (Int_t binx = 1; binx <= hPeri2D->GetNbinsX(); ++binx) {
@@ -272,8 +261,8 @@ void PeripheralSubtraction_givenRange_EtaDiff(std::string fileNameSuffix, Bool_t
 				Double_t periError = hPeri2D->GetBinError(binx, biny);
 				Double_t centError = hCent2D->GetBinError(binx, biny);
 				
-				Double_t subContent = centContent - (periContent - y0);
-				Double_t subError = TMath::Sqrt(centError*centError + periError*periError);
+				Double_t subContent = centContent - (scale * periContent - y0);
+				Double_t subError = TMath::Sqrt(centError*centError + (scale * periError)*(scale * periError));
 				
 				hSub2D->SetBinContent(binx, biny, subContent);
 				hSub2D->SetBinError(binx, biny, subError);

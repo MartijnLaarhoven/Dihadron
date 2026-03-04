@@ -84,62 +84,42 @@ void Process_TemplateFit_PeripheralSubtracted() {
     // Batch mode already set at global initialization
     gStyle->SetOptStat(0);
     
-    // Define eta bins for both configurations
-    std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0};
-    std::vector<float> etaBinsPos = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
-    
-    std::vector<InputUnit> inputList;
-    std::string inputFileNameNew = "LHC25ae_pass2_604830";
-    std::string inputFileNameNeStd = "LHC25af_pass2_611697";
-    std::string inputFileNameNeRev = "LHC25af_pass2_604820";
+    // Available eta bins in current ProcessOutput/EtaDiff (FT0C)
+    std::vector<float> etaBinsNeg = {-0.8,-0.7,-0.6};
+    std::vector<float> etaBinsPos = {0.6,0.7,0.8};
 
-    // O-O standard configuration
-    std::string inputFileName = "LHC25ae_pass2_604826";
-    collisionSystemName = GetCollisionSystemName(inputFileName);
-    
-    InputUnit templ(inputFileName, kCent, kEtaDiffOff, 80, 100);
     std::vector<InputUnit> dataList;
-    dataList.push_back(InputUnit(inputFileName, kCent, kEtaDiffOff, 0, 20));
 
-    ProcessConfig_PeripheralSubtracted(kCent, templ, dataList, inputFileName + "_PeripheralSubtracted");
-    
-    // Eta-diff version
+    // Dataset mapping for current production
+    std::string inputFileName = "LHC25ae_pass2_616549";     // O-O set A
+    std::string inputFileNameNew = "LHC25ae_pass2_618685";  // O-O set B
+    std::string inputFileNameNeStd = "LHC25af_pass2_615818"; // Ne-Ne set A
+    std::string inputFileNameNeRev = "LHC25af_pass2_615817"; // Ne-Ne set B
+
+    // O-O set A (negative eta bins)
+    collisionSystemName = GetCollisionSystemName(inputFileName);
+    InputUnit templ(inputFileName, kCent, kEtaDiffOn, 80, 100);
     dataList.clear();
     dataList.push_back(InputUnit(inputFileName, kCent, kEtaDiffOn, 0, 20));
     ProcessConfig_PtDiff_PeripheralSubtracted(kCent, kEtaDiffOn, templ, dataList, inputFileName + "_PeripheralSubtracted", etaBinsNeg);
 
-    // O-O reversed configuration
+    // O-O set B (positive eta bins)
     collisionSystemName = GetCollisionSystemName(inputFileNameNew);
-
-    InputUnit templNew(inputFileNameNew, kCent, kEtaDiffOff, 80, 100);
-    dataList.clear();
-    dataList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOff, 0, 20));
-    ProcessConfig_PeripheralSubtracted(kCent, templNew, dataList, inputFileNameNew + "_PeripheralSubtracted");
-
+    InputUnit templNew(inputFileNameNew, kCent, kEtaDiffOn, 80, 100);
     dataList.clear();
     dataList.push_back(InputUnit(inputFileNameNew, kCent, kEtaDiffOn, 0, 20));
     ProcessConfig_PtDiff_PeripheralSubtracted(kCent, kEtaDiffOn, templNew, dataList, inputFileNameNew + "_PeripheralSubtracted", etaBinsPos);
 
-    // Ne-Ne standard configuration
+    // Ne-Ne set A (negative eta bins)
     collisionSystemName = GetCollisionSystemName(inputFileNameNeStd);
-
-    InputUnit templNeStd(inputFileNameNeStd, kCent, kEtaDiffOff, 80, 100);
-    dataList.clear();
-    dataList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOff, 0, 20));
-    ProcessConfig_PeripheralSubtracted(kCent, templNeStd, dataList, inputFileNameNeStd + "_PeripheralSubtracted");
-
+    InputUnit templNeStd(inputFileNameNeStd, kCent, kEtaDiffOn, 80, 100);
     dataList.clear();
     dataList.push_back(InputUnit(inputFileNameNeStd, kCent, kEtaDiffOn, 0, 20));
     ProcessConfig_PtDiff_PeripheralSubtracted(kCent, kEtaDiffOn, templNeStd, dataList, inputFileNameNeStd + "_PeripheralSubtracted", etaBinsNeg);
 
-    // Ne-Ne reversed configuration
+    // Ne-Ne set B (positive eta bins)
     collisionSystemName = GetCollisionSystemName(inputFileNameNeRev);
-
-    InputUnit templNeRev(inputFileNameNeRev, kCent, kEtaDiffOff, 80, 100);
-    dataList.clear();
-    dataList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOff, 0, 20));
-    ProcessConfig_PeripheralSubtracted(kCent, templNeRev, dataList, inputFileNameNeRev + "_PeripheralSubtracted");
-
+    InputUnit templNeRev(inputFileNameNeRev, kCent, kEtaDiffOn, 80, 100);
     dataList.clear();
     dataList.push_back(InputUnit(inputFileNameNeRev, kCent, kEtaDiffOn, 0, 20));
     ProcessConfig_PtDiff_PeripheralSubtracted(kCent, kEtaDiffOn, templNeRev, dataList, inputFileNameNeRev + "_PeripheralSubtracted", etaBinsPos);
