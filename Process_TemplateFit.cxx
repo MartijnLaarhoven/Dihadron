@@ -1367,29 +1367,37 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     fit_p1m->SetParameters(G,v11,v21,v31,v41);
 
     
-    // 创建残差直方图
+    // 创建残差直方图（逐bin构建，避免hm/lm分箱不一致导致TH1::Add失败）
     TH1D* hsubtract = (TH1D*)hm->Clone(Form("subtract"));
-    hsubtract->Add(lm, -F);
+    hsubtract->Reset("ICES");
+    int nUsedBins = 0;
+    for (int i = 1; i <= hsubtract->GetNbinsX(); ++i) {
+        const double x = hsubtract->GetBinCenter(i);
+        const int lmBin = lm->GetXaxis()->FindBin(x);
 
-    // =============== 新增：计算chi2/ndf ===============
-    double chi2 = 0.0;
-    int nBins = hsubtract->GetNbinsX();
-    int nParams = 6; // 参数个数: F,G,v11,v21,v31,v41
-    int ndf = nBins - nParams;
-    
-    for (int i = 1; i <= nBins; i++) {
-        double data = hsubtract->GetBinContent(i);
-        double error = hsubtract->GetBinError(i);
-        double x = hsubtract->GetBinCenter(i);
-        double fit = fit_p1m->Eval(x);
-        
-        if (error > 0) { // 忽略误差为0的bin
-            double residual = data - fit;
-            chi2 += (residual * residual) / (error * error);
-        }
+        const double hmVal = hm->GetBinContent(i);
+        const double hmErr = hm->GetBinError(i);
+        const double lmVal = lm->GetBinContent(lmBin);
+        const double lmErr = lm->GetBinError(lmBin);
+
+        const double subVal = hmVal - F * lmVal;
+        double subErr2 = hmErr * hmErr + (F * lmErr) * (F * lmErr);
+        if (!(subErr2 > 0.0) || std::isnan(subErr2) || std::isinf(subErr2)) subErr2 = 1e-12;
+        const double subErr = std::sqrt(subErr2);
+
+        hsubtract->SetBinContent(i, subVal);
+        hsubtract->SetBinError(i, subErr);
+
+        if (subErr > 0.0) ++nUsedBins;
     }
-    double chi2ndf = (ndf > 0) ? chi2 / ndf : 0;
-    // =============== 新增：添加chi2/ndf标签 ===============
+
+    // 使用ROOT内建函数计算chi2
+    const double chi2 = hsubtract->Chisquare(fit_p1m, "R");
+    const int nParams = fit_p1m->GetNpar();
+    const int ndf = std::max(1, nUsedBins - nParams);
+    const double chi2ndf = chi2 / ndf;
+    
+    // =============== 添加chi2/ndf标签 ===============
     pad1->cd();
     TLatex* chi2Label = new TLatex();
     chi2Label->SetNDC();
