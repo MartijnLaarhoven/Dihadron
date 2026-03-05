@@ -110,6 +110,9 @@
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TSysEvtHandler.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TTime.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TMultiGraph.h
+./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TROOT.h
+./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TStyle.h
+./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TColor.h
 ./Process_TemplateFit_cxx.so: ./include/BasicForDihadron.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TH1D.h
 ./Process_TemplateFit_cxx.so: ./include/Bootstrap.h
@@ -278,7 +281,6 @@
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/VecCore/Utilities.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/RooNumber.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/RooGlobalFunc.h
-./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/TColor.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/RooAbsLValue.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/RooAbsBinning.h
 ./Process_TemplateFit_cxx.so: /snap/root-framework/954/usr/local/include/RooSharedProperties.h

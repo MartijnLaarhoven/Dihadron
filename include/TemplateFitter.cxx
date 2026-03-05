@@ -8,6 +8,7 @@ and for which purpose one uses it, so please be fair and whenever using it, at l
 acknowledge clearly the author of this.
 */
 #include "TemplateFitter.h"
+#include <cmath>
 // #include "RooChi2Var.h"
 using namespace RooFit;
 TemplateFitter::TemplateFitter():
@@ -76,6 +77,16 @@ Bool_t TemplateFitter::PrepareForFitting() {
 }
 Bool_t TemplateFitter::Fit(Int_t nRefits) {
   if(!PrepareForFitting()) return 0;
+  const Int_t nCells = dataH->GetNcells();
+  for (Int_t iCell = 0; iCell < nCells; ++iCell) {
+    const Double_t err = dataH->GetBinError(iCell);
+    if (!(err > 0.0) || std::isnan(err) || std::isinf(err)) {
+      const Double_t val = dataH->GetBinContent(iCell);
+      Double_t fallback = std::sqrt(std::abs(val));
+      if (!(fallback > 0.0) || std::isnan(fallback) || std::isinf(fallback)) fallback = 1e-6;
+      dataH->SetBinError(iCell, fallback);
+    }
+  }
   Int_t l_nDim = fVarList->GetEntries();
   RooArgList lVarList;
   for(Int_t i=0;i<l_nDim;i++) lVarList.add(*((RooRealVar*)fVarList->At(i)));

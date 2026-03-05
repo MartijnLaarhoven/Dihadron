@@ -22,6 +22,8 @@
 #include "TLine.h"
 #include "TSystem.h"
 #include "TMultiGraph.h"
+#include "TROOT.h"
+#include "TStyle.h"
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -76,7 +78,6 @@ VnUnit* fitSample(Bool_t isNch, TFile* templatefile, InputUnit templ, TFile* dat
 void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vector<Double_t>& fParamErr, Bool_t kRefit);
 void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t minRange, Int_t maxRange, const std::vector<Double_t>& par, const std::vector<Double_t>& parerr, Double_t pTMin=0, Double_t pTMax=0, const std::string& systemName = "");
 void CombineEtaDiffV2Plots_TemplateFit(const std::string& negFile, const std::string& posFile, const std::string& outTag, const std::string& splitName, const std::string& systemName = "");
-void CombineEtaDiffV1Plots_TemplateFit(const std::string& negFile, const std::string& posFile, const std::string& outTag, const std::string& splitName, const std::string& systemName = "");
 
 // global variables
 std::string collisionSystemName = "peripheral NeNe";
@@ -201,116 +202,6 @@ void CombineEtaDiffV2Plots_TemplateFit(const std::string& negFile, const std::st
     delete fPos;
 }
 
-//==============================================================
-void CombineEtaDiffV1Plots_TemplateFit(const std::string& negFile, const std::string& posFile, const std::string& outTag, const std::string& splitName, const std::string& systemName = "") {
-    TFile* fNeg = TFile::Open(negFile.c_str(), "READ");
-    TFile* fPos = TFile::Open(posFile.c_str(), "READ");
-
-    if (!fNeg || !fNeg->IsOpen() || !fPos || !fPos->IsOpen()) {
-        std::cerr << "Cannot open eta-diff files for combined V1 plot: " << negFile << " or " << posFile << std::endl;
-        if (fNeg) { fNeg->Close(); delete fNeg; }
-        if (fPos) { fPos->Close(); delete fPos; }
-        return;
-    }
-
-    TGraphErrors* gNeg = (TGraphErrors*)fNeg->Get("gV1Delta");
-    TGraphErrors* gPos = (TGraphErrors*)fPos->Get("gV1Delta");
-    if (!gNeg || !gPos) {
-        std::cerr << "Missing gV1Delta in one of the eta-diff files." << std::endl;
-        fNeg->Close();
-        fPos->Close();
-        delete fNeg;
-        delete fPos;
-        return;
-    }
-
-    struct Point { double x, y, ex, ey; };
-    std::vector<Point> points;
-
-    const Int_t nNeg = gNeg->GetN();
-    for (Int_t i = 0; i < nNeg; ++i) {
-        double x, y;
-        gNeg->GetPoint(i, x, y);
-        points.push_back({x, y, gNeg->GetErrorX(i), gNeg->GetErrorY(i)});
-    }
-
-    const Int_t nPos = gPos->GetN();
-    for (Int_t i = 0; i < nPos; ++i) {
-        double x, y;
-        gPos->GetPoint(i, x, y);
-        points.push_back({x, y, gPos->GetErrorX(i), gPos->GetErrorY(i)});
-    }
-
-    std::sort(points.begin(), points.end(), [](const Point& a, const Point& b) { return a.x < b.x; });
-
-    TGraphErrors* gCombined = new TGraphErrors(points.size());
-    gCombined->SetName("gV1Delta_Combined");
-    gCombined->SetTitle("v_{1#Delta} (TemplateFit);#eta_{trig};v_{1#Delta}");
-
-    for (size_t i = 0; i < points.size(); ++i) {
-        gCombined->SetPoint(i, points[i].x, points[i].y);
-        gCombined->SetPointError(i, points[i].ex, points[i].ey);
-    }
-
-    gSystem->mkdir("./TemplateFit/EtaDiff/PDFs", kTRUE);
-    gSystem->mkdir("./TemplateFit/EtaDiff", kTRUE);
-
-    TFile outFile(Form("./TemplateFit/EtaDiff/Vn_Combined_V1_%s_%s.root", outTag.c_str(), splitName.c_str()), "RECREATE");
-    gCombined->Write();
-    outFile.Close();
-
-    // Find y-axis range
-    double minY = 1e10, maxY = -1e10;
-    for (size_t i = 0; i < points.size(); ++i) {
-        minY = std::min(minY, points[i].y - points[i].ey);
-        maxY = std::max(maxY, points[i].y + points[i].ey);
-    }
-    double margin = 0.2 * (maxY - minY);
-    if (margin <= 0) margin = 0.001;
-
-    TCanvas* c = new TCanvas("cV1Delta_Combined_TemplateFit", "cV1Delta_Combined_TemplateFit", 900, 700);
-    c->SetLeftMargin(0.14);
-    c->SetRightMargin(0.05);
-    c->SetBottomMargin(0.12);
-    c->SetTopMargin(0.08);
-    
-    gCombined->SetMarkerStyle(20);
-    gCombined->SetMarkerColor(kRed);
-    gCombined->SetLineColor(kRed);
-    gCombined->SetMarkerSize(1.2);
-    gCombined->SetTitle("");
-    gCombined->Draw("AP");
-    
-    gCombined->GetXaxis()->SetLimits(-0.8, 0.8);
-    gCombined->GetXaxis()->SetRangeUser(-0.8, 0.8);
-    gCombined->GetYaxis()->SetRangeUser(minY - margin, maxY + margin);
-    gCombined->GetXaxis()->SetTitle("#eta_{trig}");
-    gCombined->GetYaxis()->SetTitle("v_{1#Delta}");
-    gCombined->GetXaxis()->SetTitleSize(0.05);
-    gCombined->GetYaxis()->SetTitleSize(0.05);
-    gCombined->GetXaxis()->SetLabelSize(0.045);
-    gCombined->GetYaxis()->SetLabelSize(0.045);
-    gCombined->GetXaxis()->SetTitleOffset(1.1);
-    gCombined->GetYaxis()->SetTitleOffset(1.3);
-    
-    // Add a zero line for reference
-    TLine* zeroLine = new TLine(-0.8, 0.0, 0.8, 0.0);
-    zeroLine->SetLineStyle(kDashed);
-    zeroLine->SetLineColor(kGray+1);
-    zeroLine->Draw("same");
-    
-    c->SaveAs(Form("./TemplateFit/EtaDiff/PDFs/V1Delta_Combined_%s_%s.pdf", outTag.c_str(), splitName.c_str()));
-
-    delete zeroLine;
-    delete c;
-    delete gCombined;
-    fNeg->Close();
-    fPos->Close();
-    delete fNeg;
-    delete fPos;
-}
-
-//==============================================================
 void Process_TemplateFit() {
     // 不显示窗口
     gROOT->SetBatch(kTRUE);
@@ -358,8 +249,7 @@ void Process_TemplateFit() {
     std::string ooPos = Form("./TemplateFit/EtaDiff/Vn_%s_%s_0_20.root", inputFileNameNew.c_str(), splitName.c_str());
 
     CombineEtaDiffV2Plots_TemplateFit(ooNeg, ooPos, Form("%s_vs_%s", inputFileName.c_str(), inputFileNameNew.c_str()), splitName, "O-O");
-    CombineEtaDiffV1Plots_TemplateFit(ooNeg, ooPos, Form("%s_vs_%s", inputFileName.c_str(), inputFileNameNew.c_str()), splitName, "O-O");
-    std::cout << "Created O-O combined plots (V1 and V2) with system name: O-O" << std::endl;
+    std::cout << "Created O-O combined plots (V2) with system name: O-O" << std::endl;
 
     // Ne-Ne combined
     std::string neNeg = Form("./TemplateFit/EtaDiff/Vn_%s_%s_0_20.root", inputFileNameNeStd.c_str(), splitName.c_str());
@@ -372,9 +262,8 @@ void Process_TemplateFit() {
         if (checkNePos) { checkNePos->Close(); delete checkNePos; }
         
         CombineEtaDiffV2Plots_TemplateFit(neNeg, nePos, Form("%s_vs_%s", inputFileNameNeStd.c_str(), inputFileNameNeRev.c_str()), splitName, "Ne-Ne");
-        CombineEtaDiffV1Plots_TemplateFit(neNeg, nePos, Form("%s_vs_%s", inputFileNameNeStd.c_str(), inputFileNameNeRev.c_str()), splitName, "Ne-Ne");
         
-        std::cout << "Created Ne-Ne combined plots (V1 and V2) with system name: Ne-Ne" << std::endl;
+        std::cout << "Created Ne-Ne combined plots (V2) with system name: Ne-Ne" << std::endl;
     } else {
         std::cout << "Ne-Ne files not available for combining" << std::endl;
         if (checkNeNeg) { checkNeNeg->Close(); delete checkNeNeg; }
@@ -501,8 +390,6 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
     std::vector<float>& etaBinsToUse = isReversed ? etaBinsPos : etaBinsNeg;
     
     // Just looping the list - store graphs for combined plots
-    std::vector<TGraphErrors*> v1Graphs;
-    std::vector<std::string> v1Labels;
     std::vector<TGraphErrors*> v2Graphs;
     std::vector<std::string> v2Labels;
     for (const auto& data : dataList) {
@@ -540,13 +427,8 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
                               gIsEtaDiff ? "EtaDiff" : "PtDiff",
                               outputFileName.c_str(), splitName.c_str(), data.minRange, data.maxRange), "RECREATE");
 
-        // 初始化直方图
+        // Initialize histograms
         const char* xTitle = gIsEtaDiff ? "#eta_{trig}" : "p_{T}";
-        TH1D* hV1 = nullptr;
-        if (gIsEtaDiff) {
-            hV1 = new TH1D("hV1", Form("v_{1};%s;v_{1}", xTitle),
-                        etaBinsToUse.size()-1, etaBinsToUse.data());
-        }
         TH1D* hV2 = new TH1D("hV2", Form("v_{2};%s;v_{2}", xTitle), 
                     etaBinsToUse.size()-1, etaBinsToUse.data());
         TH1D* hV3 = new TH1D("hV3", Form("v_{3};%s;v_{3}", xTitle), 
@@ -554,13 +436,9 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
         TH1D* hV4 = new TH1D("hV4", Form("v_{4};%s;v_{4}", xTitle), 
                     etaBinsToUse.size()-1, etaBinsToUse.data());
 
-        // 填充数据 (only valid bins)
+        // Fill data (only valid bins)
         for (size_t i = 0; i < vnResults.size(); ++i) {
             int bin = hV2->FindBin(xCenters[i]);
-            if (gIsEtaDiff) {
-                hV1->SetBinContent(bin, vnResults[i]->v1);
-                hV1->SetBinError(bin, vnResults[i]->v1_err);
-            }
             hV2->SetBinContent(bin, vnResults[i]->v2);
             hV2->SetBinError(bin, vnResults[i]->v2_err);
 
@@ -569,19 +447,6 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
 
             hV4->SetBinContent(bin, vnResults[i]->v4);
             hV4->SetBinError(bin, vnResults[i]->v4_err);
-        }
-
-        // Create V1Δ graph (eta-diff only)
-        TGraphErrors* gV1 = nullptr;
-        if (gIsEtaDiff) {
-            Int_t nBins = static_cast<Int_t>(vnResults.size());
-            gV1 = new TGraphErrors(nBins);
-            gV1->SetName("gV1Delta");
-            gV1->SetTitle(Form("v_{1#Delta};%s;v_{1#Delta}", xTitle));
-            for (Int_t i = 0; i < nBins; ++i) {
-                gV1->SetPoint(i, xCenters[i], vnResults[i]->v1);
-                gV1->SetPointError(i, xErrors[i], vnResults[i]->v1_err);
-            }
         }
 
         // Create V2Δ graph
@@ -595,33 +460,14 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
         }
 
         // Write to file
-        if (gIsEtaDiff && hV1) {
-            hV1->Write();
-        }
         hV2->Write();
         hV3->Write();
         hV4->Write();
-        if (gIsEtaDiff && gV1) {
-            gV1->Write();
-        }
         gV2->Write();
 
         std::cout << "Output file: " << Form("./TemplateFit/%s/Vn_%s_%s_%i_%i.root",
                                               gIsEtaDiff ? "EtaDiff" : "PtDiff",
                                               outputFileName.c_str(), splitName.c_str(), data.minRange, data.maxRange) << std::endl;
-        
-        // Save per-correlation V1Δ plot (eta-diff only)
-        if (gIsEtaDiff && gV1) {
-            gSystem->mkdir("./TemplateFit/EtaDiff/PDFs", kTRUE);
-            TCanvas* cV1 = new TCanvas("cV1Delta", "cV1Delta", 800, 600);
-            gV1->SetMarkerStyle(20);
-            gV1->SetMarkerColor(kRed);
-            gV1->SetLineColor(kRed);
-            gV1->Draw("AP");
-            cV1->SaveAs(Form("./TemplateFit/EtaDiff/PDFs/V1Delta_%s_%s_%d_%d.pdf",
-                             outputFileName.c_str(), splitName.c_str(), data.minRange, data.maxRange));
-            delete cV1;
-        }
         
         // Save per-correlation V2Δ plot
         if (gIsEtaDiff) {
@@ -643,38 +489,8 @@ void ProcessConfig_PtDiff(Bool_t isNch, Bool_t isEtaDiff, InputUnit templ, std::
         if (nBins > 0) {
             v2Graphs.push_back(gV2);
             v2Labels.push_back(Form("%d-%d", data.minRange, data.maxRange));
-            if (gIsEtaDiff && gV1) {
-                v1Graphs.push_back(gV1);
-                v1Labels.push_back(Form("%d-%d", data.minRange, data.maxRange));
-            }
         }
 
-    }
-
-    // Combined overlay of V1Δ for all correlations (eta-diff only)
-    if (gIsEtaDiff && v1Graphs.size() > 1) {
-        std::string splitName = "Mult";
-        if (!isNch) splitName = "Cent";
-        gSystem->mkdir("./TemplateFit/EtaDiff/PDFs", kTRUE);
-        TCanvas* cAllV1 = new TCanvas("cV1DeltaAll", "cV1DeltaAll", 900, 700);
-        TMultiGraph* mgV1 = new TMultiGraph();
-        TLegend* legV1 = new TLegend(0.65, 0.70, 0.88, 0.88);
-        legV1->SetBorderSize(0);
-        for (size_t i = 0; i < v1Graphs.size(); ++i) {
-            v1Graphs[i]->SetMarkerStyle(20 + i);
-            v1Graphs[i]->SetLineColor(colors[i % 8]);
-            v1Graphs[i]->SetMarkerColor(colors[i % 8]);
-            mgV1->Add(v1Graphs[i], "LP");
-            legV1->AddEntry(v1Graphs[i], v1Labels[i].c_str(), "lp");
-        }
-        mgV1->SetTitle("v_{1#Delta} (all);#eta_{trig};v_{1#Delta}");
-        mgV1->Draw("A");
-        legV1->Draw();
-        cAllV1->SaveAs(Form("./TemplateFit/EtaDiff/PDFs/V1Delta_All_%s_%s.pdf",
-                          outputFileName.c_str(), splitName.c_str()));
-        delete legV1;
-        delete mgV1;
-        delete cAllV1;
     }
 
     // Combined overlay of V2Δ for all correlations
@@ -802,7 +618,7 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
     std::vector<std::vector<std::vector<double>>> ValueArray;
     std::vector<std::vector<std::vector<double>>> ValueErrorArray;
     std::vector<std::vector<double>> ErrorArray;
-    int Nobs=4;//v1,v2,v3,v4
+    int Nobs=3;//v2,v3,v4
     int NofSample = maxSample*maxSample;
     int Nbin = 1;
     ResizeValueArray(ValueArray,ValueErrorArray,ErrorArray,Nobs,NofSample,Nbin);
@@ -811,24 +627,20 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
         VnUnit* vnTemp = fitSample(isNch, templatefile, templ, datafile, data, sample, 0, 0, systemName);
         if (!vnTemp) {
             // Skip this failed bootstrap sample
-            ValueArray[0][sample][0] = -999;  // Mark as invalid
+            ValueArray[0][sample][0] = -999;
             ValueErrorArray[0][sample][0] = 0;
             ValueArray[1][sample][0] = -999;
             ValueErrorArray[1][sample][0] = 0;
             ValueArray[2][sample][0] = -999;
             ValueErrorArray[2][sample][0] = 0;
-            ValueArray[3][sample][0] = -999;
-            ValueErrorArray[3][sample][0] = 0;
             continue;
         }
-        ValueArray[0][sample][0] = vnTemp->v1;
-        ValueErrorArray[0][sample][0] = vnTemp->v1_err;
-        ValueArray[1][sample][0] = vnTemp->v2;
-        ValueErrorArray[1][sample][0] = vnTemp->v2_err;
-        ValueArray[2][sample][0] = vnTemp->v3;
-        ValueErrorArray[2][sample][0] = vnTemp->v3_err;
-        ValueArray[3][sample][0] = vnTemp->v4;
-        ValueErrorArray[3][sample][0] = vnTemp->v4_err;
+        ValueArray[0][sample][0] = vnTemp->v2;
+        ValueErrorArray[0][sample][0] = vnTemp->v2_err;
+        ValueArray[1][sample][0] = vnTemp->v3;
+        ValueErrorArray[1][sample][0] = vnTemp->v3_err;
+        ValueArray[2][sample][0] = vnTemp->v4;
+        ValueErrorArray[2][sample][0] = vnTemp->v4_err;
         if (useDiff) {
             VnUnit* vnTemp_PtDiff = fitSample(isNch, templatefile_PtDiff, templ, datafile_PtDiff, data, sample, pTMin, pTMax, systemName);
             if (!vnTemp_PtDiff) {
@@ -839,20 +651,16 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
                 ValueErrorArray[1][sample][0] = 0;
                 ValueArray[2][sample][0] = -999;
                 ValueErrorArray[2][sample][0] = 0;
-                ValueArray[3][sample][0] = -999;
-                ValueErrorArray[3][sample][0] = 0;
                 delete vnTemp;
                 continue;
             }
             VnPtDiff(vnTemp_PtDiff, vnTemp);
-            ValueArray[0][sample][0] = vnTemp_PtDiff->v1;
-            ValueErrorArray[0][sample][0] = vnTemp_PtDiff->v1_err;
-            ValueArray[1][sample][0] = vnTemp_PtDiff->v2;
-            ValueErrorArray[1][sample][0] = vnTemp_PtDiff->v2_err;
-            ValueArray[2][sample][0] = vnTemp_PtDiff->v3;
-            ValueErrorArray[2][sample][0] = vnTemp_PtDiff->v3_err;
-            ValueArray[3][sample][0] = vnTemp_PtDiff->v4;
-            ValueErrorArray[3][sample][0] = vnTemp_PtDiff->v4_err;
+            ValueArray[0][sample][0] = vnTemp_PtDiff->v2;
+            ValueErrorArray[0][sample][0] = vnTemp_PtDiff->v2_err;
+            ValueArray[1][sample][0] = vnTemp_PtDiff->v3;
+            ValueErrorArray[1][sample][0] = vnTemp_PtDiff->v3_err;
+            ValueArray[2][sample][0] = vnTemp_PtDiff->v4;
+            ValueErrorArray[2][sample][0] = vnTemp_PtDiff->v4_err;
             delete vnTemp_PtDiff;
         }
         delete vnTemp;
@@ -886,15 +694,13 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
         CalculateBootstrapError(ValueArray[iobs],ValueErrorArray[iobs],ErrorArray[iobs],1.);
     }
 
-    vnResult->v1_err = ErrorArray[0][0];
-    vnResult->v2_err = ErrorArray[1][0];
-    vnResult->v3_err = ErrorArray[2][0];
-    vnResult->v4_err = ErrorArray[3][0];
+    vnResult->v2_err = ErrorArray[0][0];
+    vnResult->v3_err = ErrorArray[1][0];
+    vnResult->v4_err = ErrorArray[2][0];
     if (useDiff) {
-        vnResult_PtDiff->v1_err = ErrorArray[0][0];
-        vnResult_PtDiff->v2_err = ErrorArray[1][0];
-        vnResult_PtDiff->v3_err = ErrorArray[2][0];
-        vnResult_PtDiff->v4_err = ErrorArray[3][0];
+        vnResult_PtDiff->v2_err = ErrorArray[0][0];
+        vnResult_PtDiff->v3_err = ErrorArray[1][0];
+        vnResult_PtDiff->v4_err = ErrorArray[2][0];
     }
 
     if (cn2Tovn2) {
@@ -962,7 +768,6 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
     // print result
     if (useDiff) {
         std::cout << "print result: " << data.fileNameSuffix << " pT-diff" << std::endl;
-        std::cout << "v1: " << vnResult_PtDiff->v1 << " +/- " << vnResult_PtDiff->v1_err << std::endl;
         std::cout << "v2: " << vnResult_PtDiff->v2 << " +/- " << vnResult_PtDiff->v2_err << std::endl;
         std::cout << "v3: " << vnResult_PtDiff->v3 << " +/- " << vnResult_PtDiff->v3_err << std::endl;
         std::cout << "v4: " << vnResult_PtDiff->v4 << " +/- " << vnResult_PtDiff->v4_err << std::endl;
@@ -970,7 +775,6 @@ VnUnit* TemplateFit(Bool_t isNch, InputUnit templ, InputUnit data, Bool_t cn2Tov
         return vnResult_PtDiff;
     }
     std::cout << "print result: " << data.fileNameSuffix << std::endl;
-    std::cout << "v1: " << vnResult->v1 << " +/- " << vnResult->v1_err << std::endl;
     std::cout << "v2: " << vnResult->v2 << " +/- " << vnResult->v2_err << std::endl;
     std::cout << "v3: " << vnResult->v3 << " +/- " << vnResult->v3_err << std::endl;
     std::cout << "v4: " << vnResult->v4 << " +/- " << vnResult->v4_err << std::endl;
@@ -1099,7 +903,7 @@ VnUnit* fitSample(Bool_t isNch, TFile* templatefile, InputUnit templ, TFile* dat
     if (sample == -1) {
         PlotFitting(lm, hm, isNch, data.fileNameSuffix, data.minRange, data.maxRange, fParamVal, fParamErr, pTMin, pTMax, systemName);
     }
-    VnUnit* vnResult = new VnUnit(fParamVal[5], fParamErr[5], fParamVal[0], fParamErr[0], fParamVal[1], fParamErr[1], fParamVal[2], fParamErr[2], fParamVal[3], fParamErr[3]);
+    VnUnit* vnResult = new VnUnit(0.0, 0.0, fParamVal[0], fParamErr[0], fParamVal[1], fParamErr[1], fParamVal[2], fParamErr[2], fParamVal[3], fParamErr[3]);
     return vnResult;
 }
 
@@ -1107,8 +911,8 @@ VnUnit* fitSample(Bool_t isNch, TFile* templatefile, InputUnit templ, TFile* dat
 void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vector<Double_t>& fParamErr, Bool_t kRefit) {
     fParamVal.clear();
     fParamErr.clear();
-    fParamVal.resize(6);
-    fParamErr.resize(6);
+    fParamVal.resize(5);
+    fParamErr.resize(5);
     if (!lm ||!hm) {
         std::cerr << "Null pointer to histogram" << std::endl;
         return;
@@ -1122,7 +926,7 @@ void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vect
         // Pb-Pb initial value
         ft->AddParameter("Fa","Fa",4.5,0,30);
         ft->AddParameter("Ga","Ga",15,0,1000);
-        ft->AddParameter("v1","v1",0.0,-1.0,1.0);
+        ft->AddParameter("v1","v1",0.0,0.0,0.0);
         ft->AddParameter("v2","v2",4e-3,-1.0,1.0);
         ft->AddParameter("v3","v3",6e-4,-1.0,1.0);
         ft->AddParameter("v4","v4",1.8e-4,-1.0,1.0);
@@ -1138,7 +942,7 @@ void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vect
     else{
         ft->AddParameter("Fa","Fa",fParamVal[3],fParamVal[3]-1,fParamVal[3]+1);
         ft->AddParameter("Ga","Ga",fParamVal[4],fParamVal[4]-5,fParamVal[4]+5);
-        ft->AddParameter("v1","v1",fParamVal[5],fParamVal[5]-0.0002,fParamVal[5]+0.0002);
+        ft->AddParameter("v1","v1",0.0,0.0,0.0);
         ft->AddParameter("v2","v2",fParamVal[0],fParamVal[0]-0.0002,fParamVal[0]+0.0002);
         ft->AddParameter("v3","v3",fParamVal[1],fParamVal[1]-0.0002,fParamVal[1]+0.0002);
         ft->AddParameter("v4","v4",fParamVal[2],fParamVal[2]-0.0002,fParamVal[2]+0.0002);
@@ -1156,19 +960,16 @@ void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vect
     Double_t Fe  = ft->getErr(0);
     Double_t G   = ft->getVal(1); //0 for F, 1 for G, 2 for v2, 3 for v3, 4 for v4
     Double_t Ge  = ft->getErr(1);
-    Double_t v11 = ft->getVal(2); //0 for F, 1 for G, 2 for v1, 3 for v2, 4 for v3, 5 for v4
-    Double_t v11e= ft->getErr(2);
-    Double_t v21 = ft->getVal(3); //0 for F, 1 for G, 2 for v1, 3 for v2, 4 for v3, 5 for v4
+    Double_t v21 = ft->getVal(3); //0 for F, 1 for G, 2 for v1(fixed), 3 for v2, 4 for v3, 5 for v4
     Double_t v21e= ft->getErr(3);
-    Double_t v31 = ft->getVal(4); //0 for F, 1 for G, 2 for v1, 3 for v2, 4 for v3, 5 for v4
+    Double_t v31 = ft->getVal(4); //0 for F, 1 for G, 2 for v1(fixed), 3 for v2, 4 for v3, 5 for v4
     Double_t v31e= ft->getErr(4);
-    Double_t v41 = ft->getVal(5); //0 for F, 1 for G, 2 for v1, 3 for v2, 4 for v3, 5 for v4
+    Double_t v41 = ft->getVal(5); //0 for F, 1 for G, 2 for v1(fixed), 3 for v2, 4 for v3, 5 for v4
     Double_t v41e= ft->getErr(5);
 
     printf("Values from fit:\n");
     printf("F  = %f +- %f\n",F,Fe);
     printf("G  = %f +- %f\n",G,Ge);
-    printf("V1 = %f +- %f\n",v11,v11e);
     printf("V2 = %f +- %f\n",v21,v21e);
     printf("V3 = %f +- %f\n",v31,v31e);
     printf("V4 = %f +- %f\n",v41,v41e);
@@ -1178,7 +979,6 @@ void RooTempFitter(TH1 *lm, TH1 *hm, std::vector<Double_t>& fParamVal, std::vect
     fParamVal[2] = v41; fParamErr[2] = v41e;
     fParamVal[3] = F;   fParamErr[3] = Fe;
     fParamVal[4] = G;   fParamErr[4] = Ge;
-    fParamVal[5] = v11; fParamErr[5] = v11e;
 }
 
 void DrawText(double xmin, double ymin, double textSize, TString text)
@@ -1202,18 +1002,16 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     double v41 = par[2];
     double F =   par[3];
     double G =   par[4];
-    double v11 = par[5];
 
     double v21e = parerr[0];
     double v31e = parerr[1];
     double v41e = parerr[2];
-    double v11e = parerr[5];
 
 
     TCanvas* canvas = new TCanvas(Form("Fit"), "Fit", 800, 600);
     canvas->Range(0,0,1,1);
     
-    // 创建上下面板
+    // Create top and bottom pads
     TPad* pad1 = new TPad("pad1", "pad1", 0, 0.25, 1, 1);
     pad1->SetBorderMode(0);
     pad1->SetBorderSize(2);
@@ -1237,7 +1035,7 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     // 绘制主图
     pad1->cd();
     
-    // 创建背景直方图
+    // Create background histogram
     TH1D* hbkg1 = new TH1D("dPhi", "dPhi", 1, -TMath::Pi()/2.0, 3*TMath::Pi()/2.0);
     hbkg1->SetStats(0);
     hbkg1->GetXaxis()->SetTitle("#Delta#phi [rad]");
@@ -1263,7 +1061,7 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     hm->SetMarkerSize(1.0);
     hm->Draw("same p");
 
-    // 创建拟合曲线
+    // Create fit curve
     const int pointBin = (int)hm->GetNbinsX();
     Double_t CopyPointX[pointBin];
     Double_t CopyPointY[pointBin];
@@ -1271,7 +1069,7 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
       CopyPointX[i] = hm->GetBinCenter(i+1);
       double x = hm->GetBinCenter(i+1);
       // CopyPointY[i] = F*lm->GetBinContent(i+1)+G*(1+2*v21*cos(2*x)+2*v31*cos(3*x));
-      CopyPointY[i] = F*lm->GetBinContent(i+1)+G*(1+2*v11*cos(x)+2*v21*cos(2*x)+2*v31*cos(3*x)+2*v41*cos(4*x));
+    CopyPointY[i] = F*lm->GetBinContent(i+1)+G*(1+2*v21*cos(2*x)+2*v31*cos(3*x)+2*v41*cos(4*x));
     };
     TGraph* gCopy = new TGraph(pointBin,CopyPointX,CopyPointY);
 
@@ -1295,17 +1093,12 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     gPeri->Draw("same");
 
 
-    TF1* fit_p1 = new TF1("fit_p1","[0]*[1] + [2]*(1 + 2*[3]*cos(x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
     TF1* fit_p2 = new TF1("fit_p2","[0]*[1] + [2]*(1 + 2*[3]*cos(2*x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
     TF1* fit_p3 = new TF1("fit_p3","[0]*[1] + [2]*(1 + 2*[3]*cos(3*x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
     TF1* fit_p4 = new TF1("fit_p4","[0]*[1] + [2]*(1 + 2*[3]*cos(4*x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
-    fit_p1->SetParameters(F,Y0,G,v11);
     fit_p2->SetParameters(F,Y0,G,v21);
     fit_p3->SetParameters(F,Y0,G,v31);
     fit_p4->SetParameters(F,Y0,G,v41);
-    fit_p1->SetLineColor(colors[1]);
-    fit_p1->SetLineWidth(2);
-    fit_p1->SetLineStyle(1);
     fit_p2->SetLineColor(colors[2]);
     fit_p2->SetLineWidth(2);
     fit_p2->SetLineStyle(2);
@@ -1315,7 +1108,6 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     fit_p4->SetLineColor(colors[4]);
     fit_p4->SetLineWidth(2);
     fit_p4->SetLineStyle(4);
-    fit_p1->Draw("same");
     fit_p2->Draw("same");
     fit_p3->Draw("same");
     fit_p4->Draw("same");
@@ -1324,15 +1116,14 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
     TLegend* leg = new TLegend(0.5, 0.65, 0.9, 0.9);
     leg->SetBorderSize(0);
     leg->AddEntry(hm, "Data", "lep");
-    leg->AddEntry(gCopy, "FY(#Delta#phi)^{peri} + G(1+#Sigma_{n=1}^{4}2V_{n#Delta}cos(n#Delta#phi))", "l");
+    leg->AddEntry(gCopy, "FY(#Delta#phi)^{peri} + G(1+#Sigma_{n=2}^{4}2V_{n#Delta}cos(n#Delta#phi))", "l");
     leg->AddEntry(gPeri, "FY(#Delta#phi)^{peri} + G", "l");
-    leg->AddEntry(fit_p1, "FY(0)^{peri} + G(1+2V_{1#Delta}cos(#Delta#phi))", "l");
     leg->AddEntry(fit_p2, "FY(0)^{peri} + G(1+2V_{2#Delta}cos(2#Delta#phi))", "l");
     leg->AddEntry(fit_p3, "FY(0)^{peri} + G(1+2V_{3#Delta}cos(3#Delta#phi))", "l");
     leg->AddEntry(fit_p4, "FY(0)^{peri} + G(1+2V_{4#Delta}cos(4#Delta#phi))", "l");
     leg->Draw();
 
-    // 添加文本标签
+    // Add text labels
     TLatex* tex = new TLatex();
     tex->SetNDC();
     tex->SetTextFont(43);
@@ -1356,18 +1147,18 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
             DrawText(0.2, 0.70, 20, Form("%.1f < p_{T} < %.1f", pTMin, pTMax));
         }
     }
-    DrawText(0.2, 0.65, 20, Form("V_{1#Delta} = %.5f #pm %.5f", v11, v11e));
-    DrawText(0.2, 0.60, 20, Form("V_{2#Delta} = %.5f #pm %.5f", v21, v21e));
-    DrawText(0.2, 0.55, 20, Form("V_{3#Delta} = %.5f #pm %.5f", v31, v31e));
+    DrawText(0.2, 0.65, 20, Form("V_{2#Delta} = %.5f #pm %.5f", v21, v21e));
+    DrawText(0.2, 0.60, 20, Form("V_{3#Delta} = %.5f #pm %.5f", v31, v31e));
+    DrawText(0.2, 0.55, 20, Form("V_{4#Delta} = %.5f #pm %.5f", v41, v41e));
 
     // 绘制底部残差图
     pad2->cd();
 
     TF1* fit_p1m = new TF1("fit_p1m","[0]*(1 + 2*[1]*cos(x) + 2*[2]*cos(2*x) + 2*[3]*cos(3*x) + 2*[4]*cos(4*x))", -TMath::Pi()/2.0, 1.5*TMath::Pi());
-    fit_p1m->SetParameters(G,v11,v21,v31,v41);
+    fit_p1m->SetParameters(G,0.0,v21,v31,v41);
 
     
-    // 创建残差直方图（逐bin构建，避免hm/lm分箱不一致导致TH1::Add失败）
+    // Create residual histogram (bin-by-bin to handle potential binning differences)
     TH1D* hsubtract = (TH1D*)hm->Clone(Form("subtract"));
     hsubtract->Reset("ICES");
     int nUsedBins = 0;
@@ -1391,13 +1182,13 @@ void PlotFitting(TH1 *lm, TH1 *hm, Bool_t isNch, std::string fileSuffix, Int_t m
         if (subErr > 0.0) ++nUsedBins;
     }
 
-    // 使用ROOT内建函数计算chi2
+    // Use ROOT built-in function to calculate chi²
     const double chi2 = hsubtract->Chisquare(fit_p1m, "R");
     const int nParams = fit_p1m->GetNpar();
     const int ndf = std::max(1, nUsedBins - nParams);
     const double chi2ndf = chi2 / ndf;
     
-    // =============== 添加chi2/ndf标签 ===============
+    // Add chi²/ndf label
     pad1->cd();
     TLatex* chi2Label = new TLatex();
     chi2Label->SetNDC();
